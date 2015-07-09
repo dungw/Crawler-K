@@ -1,0 +1,25 @@
+----------------------- Huong dan su dung -----------------------------
+1. Tạo 1 project mới trong Xampp(hoặc Wamp)
+	- Tạo 1 thư mục mới trong htdocs và giải nén code, đặt tên miền tùy chọn(ex: crawler.com).
+	- Tạo 1 database mới trong phpmyadmin, đặt tên là crawler_muasamcong.
+	- Import file sql tại đường dẫn: thu_muc_code/database/crawler_muasamcong.sql vào database mới tạo.
+
+2. Mặc định trong bảng source của database đã có 2 url lấy dữ liệu là:
+	- http://muasamcong.mpi.gov.vn:8070/AD/UM_ADJ_ConrA010l1.jsp >> để lấy danh sách nhà thầu
+	- http://muasamcong.mpi.gov.vn:8070/RA/UM_RAJ_GovuC011l1.jsp >> để lấy danh sách mời thầu
+	
+3. Lấy danh sách nhà thầu
+	- Chạy url: http://crawler.com/dsnt.php
+
+4. Lấy danh sách mời thầu
+	- Chạy url: http://crawler.com/dsmt.php
+	
+5. Lấy chi tiết thông tin nhà thầu:
+	- Chạy url: http://crawler.com/nt.php
+	
+6. Lấy chi tiết thông tin mời thầu:
+	- Chạy url: http://crawler.com/mt.php
+	
+7. Sau khi lấy hết danh sách mời thầu và nhà thầu, chạy url sau để lấy cập nhật dữ liệu mới hàng ngày
+	- http://crawler.com/dsnt_new.php
+	- http://crawler.com/dsmt_new.php

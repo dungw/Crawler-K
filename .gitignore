@@ -1,0 +1,5 @@
+#phpstorm workspace
+/.idea
+
+#crawler port
+/8070

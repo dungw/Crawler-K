@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50539
 File Encoding         : 65001
 
-Date: 2015-07-13 07:46:49
+Date: 2015-07-13 07:50:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1633,7 +1633,7 @@ CREATE TABLE `route` (
   `last_time` int(11) DEFAULT '0',
   `new_page` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of route
@@ -1661,6 +1661,7 @@ INSERT INTO `route` VALUES ('22', '15', 'THONG_BAO_MOI_THAU_QUOC_TE', 'http://mu
 INSERT INTO `route` VALUES ('23', '15', 'KET_QUA_MO_THAU_DIEN_TU', 'http://muasamcong.mpi.gov.vn:8082/servlet/GC/EP_NCJ_GCQ412', '1', '0', '0', '0', '0', '0');
 INSERT INTO `route` VALUES ('24', '15', 'KET_QUA_DAU_THAU_DIEN_TU', 'http://muasamcong.mpi.gov.vn:8082/NC/EP_COJ_NCQ812.jsp', '1', '0', '0', '0', '0', '0');
 INSERT INTO `route` VALUES ('25', '15', 'KET_QUA_DAU_THAU_TRUC_TIEP', 'http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ803.jsp', '1', '0', '0', '0', '0', '0');
+INSERT INTO `route` VALUES ('26', null, null, null, '1', '0', '0', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for `source`
@@ -2640,4 +2641,19 @@ CREATE TABLE `tb_khdt` (
 
 -- ----------------------------
 -- Records of tb_khdt
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `tb_temp`
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_temp`;
+CREATE TABLE `tb_temp` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `url` tinytext,
+  `done` int(3) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of tb_temp
 -- ----------------------------

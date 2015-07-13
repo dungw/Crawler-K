@@ -1,4 +1,6 @@
 <?php
+namespace db;
+
 class db_init {
 	var $server;
 	var $username;

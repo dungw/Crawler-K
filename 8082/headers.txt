@@ -1,0 +1,24 @@
+------------------------------------------------------------------------------------------
+http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=12/07/2015&pageSize=100&pageNo=9&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N
+
+GET /GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=12/07/2015&pageSize=100&pageNo=9&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N HTTP/1.1
+Host: muasamcong.mpi.gov.vn
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9) Gecko/2008052906 Firefox/3.0
+Connection: Close
+
+HTTP/1.1 200 OK
+Server: Sun-ONE-Web-Server/6.1
+Date: Sun, 12 Jul 2015 20:40:19 GMT
+Content-type: text/html;charset=UTF-8
+Set-Cookie: ipmsperf_uuid=8000454990481723425; expires=Monday, 11-Jul-2016 20:39:04 GMT; path=/
+Set-Cookie: JSESSIONID=S5JdVvQFnv2xS0tYX7ZlyJNbKy1vr2z63rKcKDBhKpjQPGgW7M3Q!-732406297; path=/
+Transfer-encoding: chunked
+Connection: close
+
+<... See page contents in 8082/1.html ...>
+
+------ Transferred 140kb in 4.7 sec ------

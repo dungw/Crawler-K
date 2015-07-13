@@ -1,0 +1,24 @@
+------------------------------------------------------------------------------------------
+http://muasamcong.mpi.gov.vn/notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=1
+
+GET /notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=1 HTTP/1.1
+Host: muasamcong.mpi.gov.vn
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9) Gecko/2008052906 Firefox/3.0
+Connection: Close
+
+HTTP/1.1 200 OK
+Server: Sun-ONE-Web-Server/6.1
+Date: Sun, 12 Jul 2015 20:41:24 GMT
+Content-type: text/html;charset=UTF-8
+Set-Cookie: ipmsperf_uuid=-7628821239662029809; expires=Monday, 11-Jul-2016 20:40:09 GMT; path=/
+Set-Cookie: JSESSIONID=92yfVvQJGN2RTDhKMGfn4hWqHLB6P3Qwh8VknG0kzy2h4M9H3CBx!390717286; path=/
+Transfer-encoding: chunked
+Connection: close
+
+<... See page contents in 80/1.html ...>
+
+------ Transferred 15kb in 1.2 sec ------

@@ -1,10 +1,12 @@
 <?php
 require_once 'config.php';
 
+use common\Message;
+
 print '<meta http-equiv="refresh" content="1" />';
 
 // Vars
-$msg = '';
+$message = new Message();
 $data = array();
 $query = 'SELECT * FROM source WHERE done = 0 AND type = '. TYPE_MT .' LIMIT 1';
 $db = new db_query($query);
@@ -17,7 +19,7 @@ if ($row = mysql_fetch_assoc($db->result)) {
         $url = $row['url'] . '?&page_no='. ($page+1);
         $html = getHTML($url, 0, 8070);
 
-        $msg = '[URL] : <a style="text-decoration: underline;" href="'. $url .'" target="_blank">' . $url . '</a><br>';
+        $message->insertUrl($url);
 
         $blockTd = $html->find('tr[class=tdbc], tr[class=tdcc]');
         $data = array();
@@ -81,7 +83,10 @@ if ($row = mysql_fetch_assoc($db->result)) {
     $msg .= 'Hết dữ liệu';
 }
 
-alertB($msg);
+//alertB($msg);
+
+print $message->toHtml();
+
 dump($data);
 unset($html);
 unset($db);

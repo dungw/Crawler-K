@@ -1,0 +1,742 @@
+-- phpMyAdmin SQL Dump
+-- version 3.1.3.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Feb 26, 2013 at 02:35 PM
+-- Server version: 5.1.33
+-- PHP Version: 5.2.9
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `muasamcong`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `goi_thau`
+--
+
+CREATE TABLE IF NOT EXISTS `goi_thau` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `khdt_id` int(11) DEFAULT '0',
+  `So_hieu_goi_thau` varchar(255) DEFAULT NULL,
+  `Ten_goi_thau` varchar(255) DEFAULT NULL,
+  `Gia_goi_thau` varchar(255) DEFAULT NULL,
+  `Nguon_von` varchar(255) DEFAULT NULL,
+  `Hinh_thuc_lua_chon_NT` varchar(255) DEFAULT NULL,
+  `Thoi_gian_lua_chon_NT` varchar(255) DEFAULT NULL,
+  `Hinh_thuc_HD` varchar(255) DEFAULT NULL,
+  `Thoi_gian_thuc_hien_HD` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Gói thầu' AUTO_INCREMENT=248 ;
+
+--
+-- Dumping data for table `goi_thau`
+--
+
+INSERT INTO `goi_thau` (`id`, `khdt_id`, `So_hieu_goi_thau`, `Ten_goi_thau`, `Gia_goi_thau`, `Nguon_von`, `Hinh_thuc_lua_chon_NT`, `Thoi_gian_lua_chon_NT`, `Hinh_thuc_HD`, `Thoi_gian_thuc_hien_HD`) VALUES
+(1, 1, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(2, 1, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(3, 1, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(4, 1, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(5, 1, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(6, 1, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(7, 1, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(8, 1, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(9, 1, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(10, 1, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(11, 1, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(12, 1, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(13, 1, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(14, 2, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(15, 2, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(16, 2, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(17, 2, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(18, 2, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(19, 2, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(20, 2, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(21, 2, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(22, 2, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(23, 2, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(24, 2, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(25, 2, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(26, 2, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(27, 3, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(28, 3, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(29, 3, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(30, 3, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(31, 3, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(32, 3, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(33, 3, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(34, 3, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(35, 3, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(36, 3, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(37, 3, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(38, 3, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(39, 3, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(40, 4, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(41, 4, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(42, 4, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(43, 4, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(44, 4, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(45, 4, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(46, 4, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(47, 4, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(48, 4, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(49, 4, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(50, 4, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(51, 4, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(52, 4, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(53, 5, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(54, 5, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(55, 5, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(56, 5, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(57, 5, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(58, 5, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(59, 5, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(60, 5, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(61, 5, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(62, 5, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(63, 5, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(64, 5, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(65, 5, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(66, 6, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(67, 6, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(68, 6, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(69, 6, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(70, 6, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(71, 6, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(72, 6, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(73, 6, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(74, 6, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(75, 6, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(76, 6, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(77, 6, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(78, 6, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(79, 7, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(80, 7, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(81, 7, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(82, 7, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(83, 7, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(84, 7, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(85, 7, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(86, 7, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(87, 7, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(88, 7, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(89, 7, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(90, 7, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(91, 7, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(92, 8, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(93, 8, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(94, 8, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(95, 8, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(96, 8, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(97, 8, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(98, 8, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(99, 8, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(100, 8, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(101, 8, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(102, 8, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(103, 8, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(104, 8, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(105, 9, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(106, 9, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(107, 9, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(108, 9, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(109, 9, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(110, 9, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(111, 9, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(112, 9, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(113, 9, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(114, 9, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(115, 9, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(116, 9, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(117, 9, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(118, 10, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(119, 10, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(120, 10, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(121, 10, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(122, 10, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(123, 10, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(124, 10, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(125, 10, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(126, 10, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(127, 10, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(128, 10, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(129, 10, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(130, 10, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(131, 11, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(132, 11, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(133, 11, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(134, 11, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(135, 11, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(136, 11, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(137, 11, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(138, 11, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(139, 11, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(140, 11, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(141, 11, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(142, 11, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(143, 11, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(144, 12, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(145, 12, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(146, 12, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(147, 12, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(148, 12, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(149, 12, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(150, 12, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(151, 12, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(152, 12, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(153, 12, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(154, 12, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(155, 12, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(156, 12, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(157, 13, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(158, 13, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(159, 13, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(160, 13, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(161, 13, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(162, 13, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(163, 13, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(164, 13, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(165, 13, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(166, 13, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(167, 13, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(168, 13, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(169, 13, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(170, 14, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(171, 14, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(172, 14, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(173, 14, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(174, 14, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(175, 14, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(176, 14, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(177, 14, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(178, 14, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(179, 14, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(180, 14, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(181, 14, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(182, 14, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(183, 15, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(184, 15, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(185, 15, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(186, 15, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(187, 15, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(188, 15, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(189, 15, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(190, 15, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(191, 15, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(192, 15, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(193, 15, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(194, 15, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(195, 15, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(196, 16, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(197, 16, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(198, 16, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(199, 16, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(200, 16, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(201, 16, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(202, 16, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(203, 16, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(204, 16, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(205, 16, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(206, 16, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(207, 16, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(208, 16, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(209, 17, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(210, 17, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(211, 17, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(212, 17, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(213, 17, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(214, 17, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(215, 17, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(216, 17, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(217, 17, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(218, 17, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(219, 17, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(220, 17, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(221, 17, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(222, 18, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(223, 18, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(224, 18, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(225, 18, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng'),
+(226, 18, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(227, 18, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(228, 18, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(229, 18, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(230, 18, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(231, 18, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(232, 18, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(233, 18, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(234, 18, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng'),
+(235, 19, '1', 'Tư vấn khảo sát địa hình, địa chất', '275.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Trọn gói', '01 tháng'),
+(236, 19, '2', 'Tư vấn lập dự án đầu tư', '198.972.400(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Tháng 9/2012', 'Theo tỷ lệ %', '03 tháng'),
+(237, 19, '3', 'Tư vấn lập TKBVTC - tổng dự toán', '1.011.658.680(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '02 tháng'),
+(238, 19, '4', 'Tư vấn thẩm tra TKBVTC - tổng dự toán', '125.439.160(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '01 tháng');
+INSERT INTO `goi_thau` (`id`, `khdt_id`, `So_hieu_goi_thau`, `Ten_goi_thau`, `Gia_goi_thau`, `Nguon_von`, `Hinh_thuc_lua_chon_NT`, `Thoi_gian_lua_chon_NT`, `Hinh_thuc_HD`, `Thoi_gian_thuc_hien_HD`) VALUES
+(239, 19, '5', 'Đo đạc bản đồ địa chính thu hồi đất', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(240, 19, '6', 'Tư vấn lập HSMT', '33.672.916(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo tỷ lệ %', '15 ngày'),
+(241, 19, '7', 'Tư vấn giám sát thi công', '855.001.360(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo tỷ lệ %', '24 tháng'),
+(242, 19, '8', 'Tư vấn kiểm tra chứng nhận đủ điều kiện bảo đảm an toàn chịu lực', '299.250.476(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '01 tháng'),
+(243, 19, '9', 'Tư vấn lập chứng thư thẩm định giá thiết bị', '44.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '01 tháng'),
+(244, 19, '10', 'Tư vấn kiểm toán quyết toán', '151.447.050(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý II/2014', 'Theo tỷ lệ %', '01 tháng'),
+(245, 19, '11', 'Bảo hiểm công trình', '82.220.000(VND)', 'Ngân sách tỉnh', 'Chào hàng cạnh tranh,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Trọn gói', '24 tháng'),
+(246, 19, '12', 'Rà phá bom mìn, vật nổ', '55.000.000(VND)', 'Ngân sách tỉnh', 'Chỉ định thầu,Trong nước,Không sơ tuyển', 'Quý I/2013', 'Theo đơn giá', '01 tháng'),
+(247, 19, '13', 'Xây lắp và thiết', '41.110.000.000(VND)', 'Ngân sách tỉnh', 'Đấu thầu rộng rãi trong nước,Trong nước,Không sơ tuyển', 'Quý II/2013', 'Theo đơn giá', '24 tháng');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ket_qua_dau_thau`
+--
+
+CREATE TABLE IF NOT EXISTS `ket_qua_dau_thau` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `So_TBMT` varchar(255) DEFAULT NULL,
+  `Chu_dau_tu` varchar(255) DEFAULT NULL,
+  `Ten_goi_thau` varchar(255) DEFAULT NULL,
+  `Thoi_diem_dong_thau` varchar(255) DEFAULT NULL,
+  `Nha_thau_trung_thau` varchar(255) DEFAULT NULL,
+  `Gia_trung_thau` varchar(255) DEFAULT NULL,
+  `Gia_goi_thau` varchar(255) DEFAULT NULL,
+  `type` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+
+--
+-- Dumping data for table `ket_qua_dau_thau`
+--
+
+INSERT INTO `ket_qua_dau_thau` (`id`, `So_TBMT`, `Chu_dau_tu`, `Ten_goi_thau`, `Thoi_diem_dong_thau`, `Nha_thau_trung_thau`, `Gia_trung_thau`, `Gia_goi_thau`, `type`) VALUES
+(1, '20110801282-00', 'Công ty Điện toán và Truyền số liệu', 'Mua sắm thiết bị phần mềm cho hệ thống LDAP', '20/09/2011 15:00', 'Công ty CP phát triển công nghệ viễn thông tin học Sun Việt', '3.804.807.000 VNĐ', '3.846.408.720 VNĐ', 'TT'),
+(2, '20110900054-00', 'Công ty Điện toán và Truyền số liệu', 'Nâng cấp hệ thống tính cước giai đoạn 2', '14/10/2011 14:30', 'Công ty CP phát triển công nghệ Viễn thông tin học Sun Việt', '13.346.593.000 VNĐ', '13.535.994.000 VNĐ', 'TT'),
+(3, '20110901455-00', 'Công ty Điện toán và Truyền số liệu', 'Cung cấp máy chủ, thiết bị tăng cường năng lực cung cấp dịch vụ Telehosting tại VDC2, VDC3', '31/10/2011 14:30', 'Công ty TNHH phát triển thương mại và kỹ thuật Toàn Cầu', '6.580.000.000 VNĐ', '7.802.632.940 VNĐ', 'TT'),
+(4, '20111201241-00', 'Công ty Điện toán và Truyền số liệu', 'Application Switch cho hệ thống Mail VNN và card cho các POP tại VDC3', '23/12/2011 09:30', 'Công ty  TNHH một thành viên Softlogistic', '2.651.000.000 VNĐ', '2.677.941.000 VNĐ', 'TT'),
+(5, '20111201041-00', 'Công ty Điện toán và Truyền số liệu', 'Thiết bị modem phục vụ khách hàng', '23/12/2011 14:30', 'Công ty Cổ phần Song Công', '2.090.850.000 VNĐ', '2.142.835.950 VNĐ', 'TT'),
+(6, '20120100003-01', 'Công ty Điện toán và Truyền số liệu', 'Cung cấp thiết bị cho các dịch vụ giá trị gia tăng năm 2011', '10/02/2012 14:30', 'Liên danh Công ty CP tích hợp hệ thống Quốc gia (ADG) và Công ty TNHH một thành viên Ứng dụng kỹ thuật và sản xuất Tecapro', '6.015.140.000 VNĐ', '7.845.039.755 VNĐ', 'TT'),
+(7, '20120200188-00', 'Công ty Điện toán và Truyền số liệu', 'Application Switch cho hệ thống Mail VNN và card cho các POP tại VDC3', '15/02/2012 09:30', 'Công ty TNHH  một thành viên Softlogistic', '2.651.000.000 VNĐ', '2.677.941.000 VNĐ', 'TT'),
+(8, '20120100352-02', 'Công ty Điện toán và Truyền số liệu', 'Đầu tư hệ thống thiết bị thử nghiệm theo mô hình điện toán đám mây', '16/02/2012 14:30', 'Công ty CP phát triển công nghệ viễn thông tin học Sun Việt', '5.056.748.762 VNĐ', '6.841.454.794 VNĐ', 'TT'),
+(9, '20120301869-00', 'Công ty Điện lực Hai Bà Trưng', 'Gói thầu số: 02.VTTB XDCB&#47;2012&#34; Cung cấp cáp điện hạ thế&#34;', '16/04/2012 09:00', 'Công ty cổ phần tập đoàn HANAKA', '1.682.975.147 VNĐ', '1.940.375.690 VNĐ', 'TT'),
+(10, '20120302309-00', 'Công ty Điện lực Hai Bà Trưng', 'Gói thầu số 03.VTTB XDCB&#47;2012: &#34;Cung cấp tủ RMU&#34;', '20/04/2012 09:00', 'Công ty cổ phần tập đoàn TOJI Việt Nam', '1.065.350.000 VNĐ', '944.900.000 VNĐ', 'TT'),
+(11, '20120301602-00', 'Công ty Điện lực Hai Bà Trưng', 'Gói thầu số 01.VTTB XDCB&#47;2012 : Cung cấp cáp ngầm 24kV', '23/04/2012 09:00', 'Công ty cổ phần tập đoàn HANAKA', '5.978.400.000 VNĐ', '6.479.270.325 VNĐ', 'TT'),
+(12, '20120400729-00', 'Công ty Điện lực Hai Bà Trưng', 'Gói thầu số 03.VTTB DA&#47;2012: &#34;Cung cấp tủ điện hạ thế và Atômát&#34;', '26/04/2012 09:00', 'Công ty cổ phần tập đoàn TOJI Việt Nam', '1.881.440.000 VNĐ', '2.039.958.800 VNĐ', 'TT'),
+(13, '20120401958-01', 'CÔNG TY ĐIỆN LỰC BÀ RỊA - VŨNG TÀU', 'Cung cấp cáp điện các loại', '09/05/2012 08:00', 'Công Ty Công Ty Cổ Phần Địa Ốc – Cáp Điện Thịnh Phát', '3.922.388.410 VNĐ', '3.922.388.410 VNĐ', 'TT'),
+(14, '20120401959-01', 'CÔNG TY ĐIỆN LỰC BÀ RỊA - VŨNG TÀU', 'Cung cấp thiết bị đóng cắt và bảo vệ', '09/05/2012 08:00', 'Công Ty Cổ Phần Thiết Bị Điện Sài Gòn', '2.096.121.500 VNĐ', '2.114.376.650 VNĐ', 'TT'),
+(15, '20120401960-01', 'CÔNG TY ĐIỆN LỰC BÀ RỊA - VŨNG TÀU', 'Cung cấp cách điện và phụ kiện điện', '09/05/2012 08:00', 'Công Ty Cổ Phần Thiết Bị Điện Sài Gòn', '3.550.973.200 VNĐ', '3.881.242.130 VNĐ', 'TT'),
+(16, '20120401957-01', 'CÔNG TY ĐIỆN LỰC BÀ RỊA - VŨNG TÀU', 'Cung cấp trụ các loại', '15/05/2012 08:00', 'Công ty Cổ phần Bê tông ly tâm Thủ Đức', '225.454.486 VNĐ', '282.025.000 VNĐ', 'TT'),
+(17, '20120401961-01', 'CÔNG TY ĐIỆN LỰC BÀ RỊA - VŨNG TÀU', 'Cung cấp dụng cụ an toàn và bảo hộ lao động năm 2012', '15/05/2012 08:00', 'Công ty Cổ phần Bách Hóa Miền Nam', '2.073.660.000 VNĐ', '2.264.355.900 VNĐ', 'TT'),
+(18, '20120401593-00', 'CHI NHÁNH TỔNG CÔNG TY ĐIỆN LỰC THÀNH PHỐ HỒ CHÍ MINH TNHH_CÔNG TY LƯỚI ĐIỆN CAO THẾ THÀNH PHỐ HỒ CHI MINH', 'Biến dòng điện và biến điện áp 110kV', '18/05/2012 09:00', 'Công ty Cổ Phần Cơ Điện Thạch Anh', '9.916.081.560 VNĐ', '11.997.232.855 VNĐ', 'TT'),
+(19, '20120400648-00', 'Ban quản lý dự án lưới điện TP. HCM', 'Gói thầu số 1A–cung cấp và lắp đặt hoàn chỉnh tại bệ máy biến áp 63MVA-110kV', '18/05/2012 10:00', 'Công ty CP Cơ Điện Thủ Đức', '31.240.000.000 VNĐ', '31.487.000.000 VNĐ', 'TT'),
+(20, '20120500615-00', 'Công ty Điện lực Thường Tín', 'Mua máy biến áp phục vụ chống quá tải năm 2012', '21/05/2012 08:30', 'Công ty Cổ phần chế tạo máy biến thế và thiết bị điện', '2.642.211.000 VNĐ', '2.642.211.000 VNĐ', 'TT');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ket_qua_dau_thau_info`
+--
+
+CREATE TABLE IF NOT EXISTS `ket_qua_dau_thau_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(100) DEFAULT NULL,
+  `So_TBMT` varchar(255) DEFAULT NULL,
+  `Ten_goi_thau` varchar(255) DEFAULT NULL,
+  `Ten_du_an` varchar(255) DEFAULT NULL,
+  `Chu_dau_tu` varchar(255) DEFAULT NULL,
+  `Hinh_thuc_lua_chon_NT` varchar(255) DEFAULT NULL,
+  `Gia_goi_thau` varchar(255) DEFAULT NULL,
+  `Thoi_diem_dong_thau` varchar(255) DEFAULT NULL,
+  `Nha_thau_trung_thau` varchar(255) DEFAULT NULL,
+  `Gia_trung_thau` varchar(255) DEFAULT NULL,
+  `Hinh_thuc_hop_dong` varchar(255) DEFAULT NULL,
+  `Thoi_gian_thuc_hien_HD` varchar(255) DEFAULT NULL,
+  `Van_ban_phe_duyet` varchar(255) DEFAULT NULL,
+  `Ly_do_chon_NT_trung_thau` varchar(255) DEFAULT NULL,
+  `Thoi_diem_hoan_thanh` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `ket_qua_dau_thau_info`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ket_qua_mo_thau`
+--
+
+CREATE TABLE IF NOT EXISTS `ket_qua_mo_thau` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `So_TBMT` varchar(255) DEFAULT NULL,
+  `Ten_goi_thau` varchar(255) DEFAULT NULL,
+  `Chu_dau_tu` varchar(255) DEFAULT NULL,
+  `Thoi_diem_mo_dau` varchar(255) DEFAULT NULL,
+  `So_NT` varchar(255) DEFAULT NULL,
+  `Trang_thai` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Kết quả mở thầu' AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `ket_qua_mo_thau`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ke_hoach_dau_thau`
+--
+
+CREATE TABLE IF NOT EXISTS `ke_hoach_dau_thau` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Loai_thong_bao` varchar(255) DEFAULT NULL,
+  `Ten_du_an` varchar(255) DEFAULT NULL,
+  `Ten_chu_dau_tu` varchar(255) DEFAULT NULL,
+  `Phan_loai` varchar(255) DEFAULT NULL,
+  `Co_quan_ban_hanh` varchar(255) DEFAULT NULL,
+  `So_van_ban_ban_hanh` varchar(255) DEFAULT NULL,
+  `Ngay_ban_hanh` varchar(255) DEFAULT NULL,
+  `Tong_muc_dau_tu` varchar(255) DEFAULT NULL,
+  `Co_quan_phe_duyet` varchar(255) DEFAULT NULL,
+  `So_van_ban_phe_duyet` varchar(255) DEFAULT NULL,
+  `Ngay_phe_duyet` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Kế hoạch đấu thầu' AUTO_INCREMENT=20 ;
+
+--
+-- Dumping data for table `ke_hoach_dau_thau`
+--
+
+INSERT INTO `ke_hoach_dau_thau` (`id`, `Loai_thong_bao`, `Ten_du_an`, `Ten_chu_dau_tu`, `Phan_loai`, `Co_quan_ban_hanh`, `So_van_ban_ban_hanh`, `Ngay_ban_hanh`, `Tong_muc_dau_tu`, `Co_quan_phe_duyet`, `So_van_ban_phe_duyet`, `Ngay_phe_duyet`) VALUES
+(1, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '  						  						  						59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(2, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(3, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(4, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(5, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(6, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(7, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(8, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(9, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(10, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(11, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(12, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(13, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(14, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(15, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(16, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(17, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(18, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013'),
+(19, 'Dự án thực', 'CHỢ XÃ HÒA HIỆP, HUYỆN XUYÊN MỘC', 'UBND huyện Xuyên Mộc, tỉnh Bà Rịa - Vũng Tàu', 'Dự án đầu tư', '', '', '', '59.391.000.000 VND', 'UBND tỉnh Bà Rịa - Vũng Tàu', '222/QĐ-UBND', '21/01/2013');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_item_khdt`
+--
+
+CREATE TABLE IF NOT EXISTS `temp_item_khdt` (
+  `tpr_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tpr_lis_id` int(11) DEFAULT '0',
+  `tpr_msc_id` bigint(20) DEFAULT '0',
+  `tpr_newid` int(11) DEFAULT '0' COMMENT 'ID sau khi chay s3.php',
+  `tpr_status` tinyint(2) DEFAULT '0' COMMENT '0:available | 1:done | 2:error',
+  PRIMARY KEY (`tpr_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Item Kế hoạch đấu thầu' AUTO_INCREMENT=116 ;
+
+--
+-- Dumping data for table `temp_item_khdt`
+--
+
+INSERT INTO `temp_item_khdt` (`tpr_id`, `tpr_lis_id`, `tpr_msc_id`, `tpr_newid`, `tpr_status`) VALUES
+(76, 0, 32943, 10, 1),
+(77, 0, 32941, 11, 1),
+(78, 0, 32938, 12, 1),
+(79, 0, 32935, 13, 1),
+(80, 0, 32928, 14, 1),
+(81, 0, 32926, 15, 1),
+(82, 0, 32924, 16, 1),
+(83, 0, 32922, 17, 1),
+(84, 0, 32916, 18, 1),
+(85, 0, 32914, 19, 1),
+(86, 0, 32912, 0, 0),
+(87, 0, 32910, 0, 0),
+(88, 0, 32908, 0, 0),
+(89, 0, 32902, 0, 0),
+(90, 0, 32900, 0, 0),
+(91, 0, 32898, 0, 0),
+(92, 0, 32896, 0, 0),
+(93, 0, 32894, 0, 0),
+(94, 0, 32892, 0, 0),
+(95, 0, 32888, 0, 0),
+(96, 0, 32883, 0, 0),
+(97, 0, 32880, 0, 0),
+(98, 0, 32878, 0, 0),
+(99, 0, 32873, 0, 0),
+(100, 0, 32868, 0, 0),
+(101, 0, 32865, 0, 0),
+(102, 0, 32862, 0, 0),
+(103, 0, 32860, 0, 0),
+(104, 0, 32856, 0, 0),
+(105, 0, 32849, 0, 0),
+(106, 0, 32845, 0, 0),
+(107, 0, 32843, 0, 0),
+(108, 0, 32841, 0, 0),
+(109, 0, 32833, 0, 0),
+(110, 0, 32831, 0, 0),
+(111, 0, 32829, 0, 0),
+(112, 0, 32827, 0, 0),
+(113, 0, 32820, 0, 0),
+(114, 0, 32813, 0, 0),
+(115, 0, 32808, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_item_kqdt`
+--
+
+CREATE TABLE IF NOT EXISTS `temp_item_kqdt` (
+  `tpr_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tpr_lis_id` int(11) DEFAULT '0',
+  `tpr_msc_id` bigint(20) DEFAULT '0',
+  `tpr_msc_no` varchar(100) DEFAULT '',
+  `tpr_newid` int(11) DEFAULT '0' COMMENT 'ID sau khi chay s3.php',
+  `tpr_status` tinyint(2) DEFAULT '0' COMMENT '0:available | 1:done | 2:error',
+  `tpr_type` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`tpr_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Item Kế hoạch đấu thầu' AUTO_INCREMENT=21 ;
+
+--
+-- Dumping data for table `temp_item_kqdt`
+--
+
+INSERT INTO `temp_item_kqdt` (`tpr_id`, `tpr_lis_id`, `tpr_msc_id`, `tpr_msc_no`, `tpr_newid`, `tpr_status`, `tpr_type`) VALUES
+(1, 0, 20110801282, '00', 0, 9, 'TT'),
+(2, 0, 20110900054, '00', 0, 0, 'TT'),
+(3, 0, 20110901455, '00', 0, 0, 'TT'),
+(4, 0, 20111201241, '00', 0, 0, 'TT'),
+(5, 0, 20111201041, '00', 0, 0, 'TT'),
+(6, 0, 20120100003, '01', 0, 0, 'TT'),
+(7, 0, 20120200188, '00', 0, 0, 'TT'),
+(8, 0, 20120100352, '02', 0, 0, 'TT'),
+(9, 0, 20120301869, '00', 0, 0, 'TT'),
+(10, 0, 20120302309, '00', 0, 0, 'TT'),
+(11, 0, 20120301602, '00', 0, 0, 'TT'),
+(12, 0, 20120400729, '00', 0, 0, 'TT'),
+(13, 0, 20120401958, '01', 0, 0, 'TT'),
+(14, 0, 20120401959, '01', 0, 0, 'TT'),
+(15, 0, 20120401960, '01', 0, 0, 'TT'),
+(16, 0, 20120401957, '01', 0, 0, 'TT'),
+(17, 0, 20120401961, '01', 0, 0, 'TT'),
+(18, 0, 20120401593, '00', 0, 0, 'TT'),
+(19, 0, 20120400648, '00', 0, 0, 'TT'),
+(20, 0, 20120500615, '00', 0, 0, 'TT');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_item_kqmt`
+--
+
+CREATE TABLE IF NOT EXISTS `temp_item_kqmt` (
+  `tpr_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tpr_lis_id` int(11) DEFAULT '0',
+  `tpr_msc_id` bigint(20) DEFAULT '0',
+  `tpr_newid` int(11) DEFAULT '0' COMMENT 'ID sau khi chay s3.php',
+  `tpr_status` tinyint(2) DEFAULT '0' COMMENT '0:available | 1:done | 2:error',
+  PRIMARY KEY (`tpr_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Item Kết quả mở thầu' AUTO_INCREMENT=116 ;
+
+--
+-- Dumping data for table `temp_item_kqmt`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_item_tbmt`
+--
+
+CREATE TABLE IF NOT EXISTS `temp_item_tbmt` (
+  `tpr_id` int(11) NOT NULL AUTO_INCREMENT,
+  `tpr_lis_id` int(11) DEFAULT '0',
+  `tpr_msc_id` bigint(20) DEFAULT '0',
+  `tpr_msc_no` varchar(100) DEFAULT NULL,
+  `tpr_newid` int(11) DEFAULT '0' COMMENT 'ID sau khi chay s3.php',
+  `tpr_status` tinyint(2) DEFAULT '0' COMMENT '0:available | 1:done | 2:error',
+  `tpr_type` varchar(255) DEFAULT NULL,
+  `tpr_form` varchar(100) DEFAULT NULL COMMENT 'Hình thức',
+  PRIMARY KEY (`tpr_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Item Thông báo mời thầu' AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `temp_item_tbmt`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_list`
+--
+
+CREATE TABLE IF NOT EXISTS `temp_list` (
+  `lis_id` int(11) NOT NULL AUTO_INCREMENT,
+  `lis_url` varchar(500) DEFAULT NULL,
+  `lis_type` varchar(255) DEFAULT NULL,
+  `lis_page` int(11) DEFAULT '0',
+  `lis_total_page` int(11) DEFAULT '0',
+  `lis_status` tinyint(2) DEFAULT '0',
+  PRIMARY KEY (`lis_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `temp_list`
+--
+
+INSERT INTO `temp_list` (`lis_id`, `lis_url`, `lis_type`, `lis_page`, `lis_total_page`, `lis_status`) VALUES
+(3, 'http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ701.jsp?toOpenDate=31/12/2050&pqCls=Y&refNumber=&toDate=23/02/2013&fromDate=24/01/2008&bidMethod=&typeFind=1&isInstitu=0&viewType=0&fromOpenDate=01/01/2010&instituCode=&instituName=&firstCall=N&pageSize=10&bidNM=&pageNo=&gubun=1&gubun=1', 'TBMT_HH', 0, 0, 0),
+(4, 'http://muasamcong.mpi.gov.vn:8082/BP/EP_EPJ_BPP103.jsp?page_size=&bid_plan_project_company_issue=&bid_plan_project_refnum=&public_dt_to=25/03/2013&bid_plan_project_invest_nm=&public_dt_from=24/01/2008&bid_plan_project_nm=&RegYN=Y', 'KHDT', 0, 0, 1),
+(5, 'http://muasamcong.mpi.gov.vn:8082/servlet/GC/EP_MPV_GCQ412?check=1361610992038&suyoCode=&suyoName=&gigwan=1&nj_select=&prod_name=&yipchal_date1=12/10/2010&yipchal_date2=23/02/2013&refer_num=&cont_method=&gongotype=Y&orderby_item=2&page_size=10&totalCount=355', 'KQMT', 0, 0, 1),
+(6, 'http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ803.jsp?toOpenDate=25/02/2013&pqCls=Y&refNumber=&toDate=31/12/2050&fromDate=01/01/2010&bidMethod=00&isInstitu=0&viewType=0&fromOpenDate=26012008&instituCode=&Bid_succ_offline_yn=N&instituName=&firstCall=N&pageSize=10&bidNM=&pageNo=&gubun=1&gubun=1', 'KQDT_TT', 0, 0, 1),
+(7, 'http://muasamcong.mpi.gov.vn:8082/NC/EP_COJ_NCQ812.jsp?orgCode=&radOrgan=0&bidType=1&referNum=&noticeNm=&openbidDate1=26012008&noticeType=Y&notice_num=&instituCode=&searchType=1&instituName=&openbidDate2=25/02/2013&pageSize=10', 'KQDT_DT', 0, 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `thong_bao_moi_thau`
+--
+
+CREATE TABLE IF NOT EXISTS `thong_bao_moi_thau` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(100) DEFAULT NULL,
+  `So_TBMT` varchar(255) DEFAULT NULL,
+  `Chu_dau_tu` varchar(255) DEFAULT NULL,
+  `Ten_goi_thau` varchar(255) DEFAULT NULL,
+  `Thoi_diem_dang_tai` varchar(255) DEFAULT NULL,
+  `Thoi_diem_dong_thau` varchar(255) DEFAULT NULL,
+  `Hinh_thuc_du_thau` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `thong_bao_moi_thau`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `thong_bao_moi_thau_dien_tu`
+--
+
+CREATE TABLE IF NOT EXISTS `thong_bao_moi_thau_dien_tu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(100) DEFAULT NULL,
+  `newid` int(11) DEFAULT '0',
+  `So_TBMT` varchar(255) DEFAULT NULL,
+  `Hinh_thuc_thong_bao` varchar(255) DEFAULT NULL,
+  `Loai_thong_bao` varchar(255) DEFAULT NULL,
+  `Linh_vuc_thong_bao` varchar(255) DEFAULT NULL,
+  `Ben_moi_thau` varchar(255) DEFAULT NULL,
+  `Chu_dau_tu` varchar(255) DEFAULT NULL,
+  `Ten_goi_thau` varchar(255) DEFAULT NULL,
+  `Ten_du_an` varchar(255) DEFAULT NULL,
+  `So_van_ban` varchar(255) DEFAULT NULL,
+  `Nguon_von` varchar(255) DEFAULT NULL,
+  `Phuong_thuc_hop_dong` varchar(255) DEFAULT NULL,
+  `Hinh_thuc_dau_thau` varchar(255) DEFAULT NULL,
+  `Hinh_thuc_nhan_HSDT` varchar(255) DEFAULT NULL,
+  `Thoi_gian_nhan_HSDT_tu` varchar(255) DEFAULT NULL,
+  `Thoi_gian_nhan_HSDT_den` varchar(255) DEFAULT NULL,
+  `Mua_ho_so_moi_thau` varchar(255) DEFAULT NULL,
+  `So_tien` varchar(255) DEFAULT NULL,
+  `So_tien_bang_chu_TDT` varchar(255) DEFAULT NULL,
+  `Ten_ngan_hang_TDT` varchar(255) DEFAULT NULL,
+  `So_tai_khoan_nhan_tien_TDT` varchar(255) DEFAULT NULL,
+  `Ten_tai_khoan_TDT` varchar(255) DEFAULT NULL,
+  `Dia_diem_nop_tien_mua_HSMT` varchar(255) DEFAULT NULL,
+  `Dia_diem_nhan_HSDT` varchar(255) DEFAULT NULL,
+  `Hinh_thuc` varchar(255) DEFAULT NULL,
+  `Ten_ngan_hang_BDDT` varchar(255) DEFAULT NULL,
+  `So_tai_khoan_nhan_tien_BDDT` varchar(255) DEFAULT NULL,
+  `Ten_tai_khoan_BDDT` varchar(255) DEFAULT NULL,
+  `Dia_diem_nop_tien_BDDT` varchar(255) DEFAULT NULL,
+  `Kieu_lien_danh` varchar(255) DEFAULT NULL,
+  `Thoi_diem_ket_thuc_nop` varchar(255) DEFAULT NULL,
+  `Thoi_diem_mo_thau` varchar(255) DEFAULT NULL,
+  `Dia_diem_mo_thau` varchar(255) DEFAULT NULL,
+  `Gia_goi_thau` varchar(255) DEFAULT NULL,
+  `So_tien_bang_chu` varchar(255) DEFAULT NULL,
+  `Loai_tien_chuyen_doi` varchar(255) DEFAULT NULL,
+  `Tai_ngan_hang` varchar(255) DEFAULT NULL,
+  `Thoi_diem_lay_ti_gia` varchar(255) DEFAULT NULL,
+  `Ho_so_moi_thau` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `thong_bao_moi_thau_dien_tu`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `thong_bao_moi_thau_truc_tiep`
+--
+
+CREATE TABLE IF NOT EXISTS `thong_bao_moi_thau_truc_tiep` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(100) DEFAULT NULL,
+  `newid` int(11) DEFAULT '0' COMMENT 'ID bảng thong_bao_moi_thau',
+  `So_TBMT` varchar(100) DEFAULT NULL,
+  `Loai_thong_bao` varchar(255) DEFAULT NULL,
+  `Hinh_thuc_thong_bao` varchar(255) DEFAULT NULL,
+  `Linh_vuc_thong_bao` varchar(255) DEFAULT NULL,
+  `Goi_thau` text,
+  `Thuoc_du_an` varchar(255) DEFAULT NULL,
+  `Nguon_von` varchar(255) DEFAULT NULL,
+  `Ben_moi_thau` varchar(255) DEFAULT NULL,
+  `Hinh_thuc_lua_chon_nha_thau` varchar(255) DEFAULT NULL,
+  `Thoi_gian_ban_HSMT_tu_ngay` varchar(255) DEFAULT NULL,
+  `Thoi_gian_ban_HSMT_den_ngay` varchar(255) DEFAULT NULL,
+  `Dia_diem` tinytext,
+  `Gia_ban` varchar(255) DEFAULT NULL,
+  `Thoi_diem_dong_thau` varchar(255) DEFAULT NULL,
+  `Ho_so_moi_thau` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Thông báo mời thầu' AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `thong_bao_moi_thau_truc_tiep`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `thong_tin_du_thau`
+--
+
+CREATE TABLE IF NOT EXISTS `thong_tin_du_thau` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `kqmt_id` int(11) DEFAULT '0' COMMENT 'ID Kết quả mở thầu',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Thông tin dự thầu' AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `thong_tin_du_thau`
+--
+

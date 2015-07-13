@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------
-http://muasamcong.mpi.gov.vn/notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=1
+http://muasamcong.mpi.gov.vn/notice/PT_NTJ_NTQ005.jsp?noticeNo=3112
 
-GET /notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=1 HTTP/1.1
+GET /notice/PT_NTJ_NTQ005.jsp?noticeNo=3112 HTTP/1.1
 Host: muasamcong.mpi.gov.vn
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 Accept-Language: en-us,en;q=0.5
@@ -12,13 +12,13 @@ Connection: Close
 
 HTTP/1.1 200 OK
 Server: Sun-ONE-Web-Server/6.1
-Date: Sun, 12 Jul 2015 20:41:24 GMT
-Content-type: text/html;charset=UTF-8
-Set-Cookie: ipmsperf_uuid=-7628821239662029809; expires=Monday, 11-Jul-2016 20:40:09 GMT; path=/
-Set-Cookie: JSESSIONID=92yfVvQJGN2RTDhKMGfn4hWqHLB6P3Qwh8VknG0kzy2h4M9H3CBx!390717286; path=/
-Transfer-encoding: chunked
+Date: Mon, 13 Jul 2015 03:15:48 GMT
+Content-length: 4250
+Content-type: text/html; charset=UTF-8
+Set-Cookie: ipmsperf_uuid=6891072164822703434; expires=Tuesday, 12-Jul-2016 03:14:32 GMT; path=/
+Set-Cookie: JSESSIONID=wqtbVjtY0wFkCqTBpGmwTBjkvlMgVpXwxLv55nSVZQ12MhzTTWyT!390717286; path=/
 Connection: close
 
 <... See page contents in 80/1.html ...>
 
------- Transferred 15kb in 1.2 sec ------
+------ Transferred 5kb in 1.5 sec ------

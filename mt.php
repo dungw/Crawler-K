@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 
-print '<meta http-equiv="refresh" content="100" />';
+print '<meta http-equiv="refresh" content="1" />';
 
 $signs = array(
     'name_short' => 'Tên cơ quan (viết tắt)',

@@ -1,6 +1,4 @@
 <?php
-namespace db;
-
 class db_init {
 	var $server;
 	var $username;
@@ -12,7 +10,7 @@ class db_init {
         $this->server	  = "localhost";
 		$this->username   = "root";
 		$this->password   = "";
-		$this->database   = "crawler_muasamcong";
+		$this->database   = "cr.com";
 
 	}
 	function __destruct()
@@ -147,8 +145,7 @@ class db_query
 	   return ((float)$usec + (float)$sec);
 	}	
 }
-?>
-<?
+
 class db_execute 
 {
 	var $links;
@@ -170,6 +167,7 @@ class db_execute
 		mysql_close($this->links);	
 	}
 }
+
 class db_count{
 	var $total;
 	function db_count($sql){
@@ -184,8 +182,7 @@ class db_count{
 		return $this->total;
 	}
 }
-?>
-<?
+
 class db_execute_return 
 {
 	var $links;
@@ -213,4 +210,3 @@ class db_execute_return
 		return $last_id;
 	}
 }
-?>

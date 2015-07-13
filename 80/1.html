@@ -1,4 +1,3 @@
-5a2
 ﻿
 
 
@@ -6,402 +5,96 @@
 
 
 
- 
 
-
- 
 
 
 
 <html>
 <head>
-<meta http-equiv='Content-Type' Content='text/html; charset=UTF-8'>
+<meta http-equiv='Content-Type' Content='text/html; charset=UTF-8'> 
 <link href="http://muasamcong.mpi.gov.vn/css/TA.css" rel="stylesheet" type="text/css" /> 
 <link href="http://muasamcong.mpi.gov.vn/css/pagetitle_style.css" rel="stylesheet" type="text/css" />
-<script language="javascript" src="http://muasamcong.mpi.gov.vn/calendar/js/calendar.js" ></script>
-
-</head>
-
-<body>
-<div class="col-750 clearfix last">
-	<h1 class="pageTitle"><i class="icon-title"></i>Thông báo</h1>
-	  
-	<form name="searchForm" action="">
-	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr align="right"> 
-            
-	    <select name="SITEGUBUN" OnChange="siteSelect()" style="display: none;">
-	      	<option value="0" selected>Phân loại người hỏi</option>
-			<option value="1" >Cơ quan công</option>
-			<option value="2" >Nhà thầu</option>
-	   	</select>
-	   <td></td>
-            <td align="left" width="60">
-            <select id = "listNo" name="listNo" title="" OnChange="javascript:doSearch();">
-				<option id="listNo" value="10" selected
- onclick="javascript:doSearch();">danh sách 10 </option>
-				<option id="listNo" value="15"  onclick="javascript:doSearch();">danh sách 15 </option>
-				<option id="listNo" value="20"  onclick="javascript:doSearch();">danh sách 20 </option>
-				<option id="listNo" value="30"  onclick="javasc
-5a8
-ript:doSearch();">danh sách 30 </option>
-			</select> 
-	   		</td>
-            <td align="left" width="100"><select id="catNo" name="catNo" title="" onchange="javascript: doSearch();">
-									<option id="catNo" value="" onclick="javascript: doSearch();"> Tất cả </option>
-											
-													<option id="catNo" value="9" onclick="javascript:doSearch();"> Thông báo  Qu&#7843;n tr&#7883; </option>
-											
-													<option id="catNo" value="1" onclick="javascript:doSearch();"> Thông báo của Bộ </option>
-											
-													<option id="catNo" value="2" onclick="javascript:doSearch();"> Kết quả đấu thầu </option>
-											
-													<option id="catNo" value="3" onclick="javascript:doSearch();"> Kết quả mời thầu </option>
-											
-													<option id="catNo" value="4" onclick="javascript:doSearch();"> Thông tin dự thầu </option>
-											
-													<option id="catNo" value="v" onclick="javascript:doSearch();"> V&#259;n b&#7843;n ph&#225;p quy </option>
-										
-									 
-								</select>
-            </td>
-            <td align="right">	
-		  
-		 Tổng số  84
-		 [<img src="/img/page.gif" width="10" height="13" align="absmiddle"> Trang 1  / 9 ]            		
-			 <select name="SRCH_TYPE" onChange="doSearch();" style="width:70;">
-               	 <option value="0" >Tiêu đề</option>	
-                 <option value="1" >Tác giả<
-49e
-/option>		 
-               	 <option value="2" > Nội dung</option>		 	 
-              </select>
-              	<input type="text" maxlength="100" name="searchTitle" value="" size="23" onKeyPress="if(event.keyCode == 13) doSearch();"> 
-			
-				<input type="button" class="commonbutton" value="Tìm kiếm" onclick="javascript:doSearch();"/>
-              </td>
-          </tr>
-          <tr height="3"><td colspan="4"></td></tr>
-        </table>
-        </form>
-				
-				<table border="0" width="100%" cellpadding="2" cellspacing="1">
-					<tr height="4" class='LINE'>
-						<td colspan="6" width="100%"></td>
-					</tr>
-					<tr>
-						<td class="tdac" width="7%">STT</td>
-						<td class="tdac" width="57%">Tiêu đề</td>
-						<!--<td class="tdac" width="15%">Người soạn</td>-->
-						<td class="tdac" width="15%">Cơ quan</td>
-						<td class="tdac" width="12%">Ngày tạo</td>
-						<td class="tdac" width="17%">Số lần xem</td>
-					</tr>
-					
-                    
-					<tr  class="tdb">
-						<td    align="center">
-							 	
-							 	1						    
-						</td>
-						
-						<td   height="28px">
-							<a href="javascript:sendLink(
-102
-'../notice/PT_NTJ_NTQ005.jsp?noticeNo=3182','main_popup','width=500,height=530,resizable=no,scrollbars=yes');">
-					    		Mẫu hồ sơ mời thầu Mua sắm hàng hóa & Xây lắp áp dụng cho các dự án AD...
-					    		
-					    			<img src=".
-5a8
-./../img/but_calen.gif"/>
-					    		
-					    	</a> 
-						</td>
-						
-						<!--
-						list[i].data[2]==null?"":list[i].data[2] 
-						-->
-						<td>Cục quản lý đấu thầu</td>
-						<td align="center">08/07/2015</td>
-						<td align="center" >166</td>
-					</tr>
-					
-					<tr  class="tdc">
-						<td    align="center">
-							 	
-							 	2						    
-						</td>
-						
-						<td   height="28px">
-							<a href="javascript:sendLink('../notice/PT_NTJ_NTQ005.jsp?noticeNo=3112','main_popup','width=500,height=530,resizable=no,scrollbars=yes');">
-					    		Góp ý dự thảo Thông tư Quy định chi tiết lập Báo cáo thẩm định hồ sơ m...
-					    		
-					    			<img src="../../img/but_calen.gif"/>
-					    		
-					    	</a> 
-						</td>
-						
-						<!--
-						list[i].data[2]==null?"":list[i].data[2] 
-						-->
-						<td>Cục quản lý đấu thầu</td>
-						<td align="center">30/06/2015</td>
-						<td align="center" >208</td>
-					</tr>
-					
-					<tr  class="tdb">
-						<td    align="center">
-							 	
-							 	3						    
-						</td>
-						
-						<td   height="28px">
-							<a href="javascript:sendLink('../notice/PT_NTJ_NTQ005.jsp?noticeNo=3111','main_popup','width=500,height=530,resizable=no,scrollbars=yes');">
-					    		Góp ý dự thảo Thông tư quy định chi tiết lập Báo cáo đánh giá Hồ sơ dự...
-					    		
-					    			<img sr
-5a8
-c="../../img/but_calen.gif"/>
-					    		
-					    	</a> 
-						</td>
-						
-						<!--
-						list[i].data[2]==null?"":list[i].data[2] 
-						-->
-						<td>Cục quản lý đấu thầu</td>
-						<td align="center">30/06/2015</td>
-						<td align="center" >251</td>
-					</tr>
-					
-					<tr  class="tdc">
-						<td    align="center">
-							 	
-							 	4						    
-						</td>
-						
-						<td   height="28px">
-							<a href="javascript:sendLink('../notice/PT_NTJ_NTQ005.jsp?noticeNo=2356','main_popup','width=500,height=530,resizable=no,scrollbars=yes');">
-					    		Góp ý Dự thảo Thông tư quy định chi tiết lập Hồ sơ yêu cầu chỉ định th...
-					    		
-					    			<img src="../../img/but_calen.gif"/>
-					    		
-					    	</a> 
-						</td>
-						
-						<!--
-						list[i].data[2]==null?"":list[i].data[2] 
-						-->
-						<td>Cục quản lý đấu thầu</td>
-						<td align="center">12/03/2015</td>
-						<td align="center" >4088</td>
-					</tr>
-					
-					<tr  class="tdb">
-						<td    align="center">
-							 	
-							 	5						    
-						</td>
-						
-						<td   height="28px">
-							<a href="javascript:sendLink('../notice/PT_NTJ_NTQ005.jsp?noticeNo=2313','main_popup','width=500,height=530,resizable=no,scrollbars=yes');">
-					    		Thông tư số 01/2015/TT-BKHĐT quy định chi tiết lập Hồ sơ mời quan tâm,...
-					    		
-					    			<img src
-396
-="../../img/but_calen.gif"/>
-					    		
-					    	</a> 
-						</td>
-						
-						<!--
-						list[i].data[2]==null?"":list[i].data[2] 
-						-->
-						<td>Cục quản lý đấu thầu</td>
-						<td align="center">02/03/2015</td>
-						<td align="center" >4967</td>
-					</tr>
-					
-					<tr  class="tdc">
-						<td    align="center">
-							 	
-							 	6						    
-						</td>
-						
-						<td   height="28px">
-							<a href="javascript:sendLink('../notice/PT_NTJ_NTQ005.jsp?noticeNo=2222','main_popup','width=500,height=530,resizable=no,scrollbars=yes');">
-					    		BÊN MỜI THÂU LƯU Ý THỜI GIAN ĐĂNG THÔNG BÁO MỜI THÂU TRONG DỊP TẾT
-					    		
-					    	</a> 
-						</td>
-						
-						<!--
-						list[i].data[2]==null?"":list[i].data[2] 
-						-->
-						<td>Cục quản lý đấu thầu</td>
-						<td align="center">05/02/2015</td>
-						<td align="center" 
-20a
->1489</td>
-					</tr>
-					
-					<tr  class="tdb">
-						<td    align="center">
-							 	
-							 	7						    
-						</td>
-						
-						<td   height="28px">
-							<a href="javascript:sendLink('../notice/PT_NTJ_NTQ005.jsp?noticeNo=2220','main_popup','width=500,height=530,resizable=no,scrollbars=yes');">
-					    		THÔNG BÁO VỀ VIỆC GỘP SỐ BÁO ĐẤU THẦU VÀ ĐĂNG TẢI THÔNG TIN VỀ ĐẤU THẦ...
-					    		
-					    			<img src="../../img/but_calen.gif"/>
-					    		
-					    	</a> 
-5a8
-
-						</td>
-						
-						<!--
-						list[i].data[2]==null?"":list[i].data[2] 
-						-->
-						<td>Cục quản lý đấu thầu</td>
-						<td align="center">30/01/2015</td>
-						<td align="center" >1606</td>
-					</tr>
-					
-					<tr  class="tdc">
-						<td    align="center">
-							 	
-							 	8						    
-						</td>
-						
-						<td   height="28px">
-							<a href="javascript:sendLink('../notice/PT_NTJ_NTQ005.jsp?noticeNo=2188','main_popup','width=500,height=530,resizable=no,scrollbars=yes');">
-					    		Hội thảo lấy ý kiến cho Dự thảo Thông tư quy định Mẫu Hồ sơ yêu cầu đố...
-					    		
-					    			<img src="../../img/but_calen.gif"/>
-					    		
-					    	</a> 
-						</td>
-						
-						<!--
-						list[i].data[2]==null?"":list[i].data[2] 
-						-->
-						<td>Cục quản lý đấu thầu</td>
-						<td align="center">20/01/2015</td>
-						<td align="center" >2568</td>
-					</tr>
-					
-					<tr  class="tdb">
-						<td    align="center">
-							 	
-							 	9						    
-						</td>
-						
-						<td   height="28px">
-							<a href="javascript:sendLink('../notice/PT_NTJ_NTQ005.jsp?noticeNo=2029','main_popup','width=500,height=530,resizable=no,scrollbars=yes');">
-					    		Thông báo ban hành Luật Đầu tư công, Luật Doanh nghiệp và Thông tư 31 ...
-					    		
-					    			<img src="../../img/but_calen.gif"/>
-					    		
-					    	</a
-5a8
-> 
-						</td>
-						
-						<!--
-						list[i].data[2]==null?"":list[i].data[2] 
-						-->
-						<td>Cục quản lý đấu thầu</td>
-						<td align="center">12/12/2014</td>
-						<td align="center" >1440</td>
-					</tr>
-					
-					<tr  class="tdc">
-						<td    align="center">
-							 	
-							 	10						    
-						</td>
-						
-						<td   height="28px">
-							<a href="javascript:sendLink('../notice/PT_NTJ_NTQ005.jsp?noticeNo=1958','main_popup','width=500,height=530,resizable=no,scrollbars=yes');">
-					    		BÁO CÁO CÔNG TÁC ĐẤU THẦU 2014
-					    		
-					    			<img src="../../img/but_calen.gif"/>
-					    		
-					    	</a> 
-						</td>
-						
-						<!--
-						list[i].data[2]==null?"":list[i].data[2] 
-						-->
-						<td>Cục quản lý đấu thầu</td>
-						<td align="center">04/12/2014</td>
-						<td align="center" >2479</td>
-					</tr>
-									
-					<tr height="2" class='LINE'>
-						<td colspan="6"></td>
-					</tr> 		</table>
-				<table width=100% border=0 cellpadding=2 cellspacing=2><tr class=tr><td align=center class=redc>[1]<a href='/notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=2'>[2]</a><a href='/notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=3'>[3]</a><a href='/notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=4'>[4]</a><a href='/notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=5'>[5]</a><a href='/notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=6'>[6]</a><a href='/notice/PT_NTJ_NTQ001.jsp?typ
-28e
-e=P&&page_no=7'>[7]</a><a href='/notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=8'>[8]</a><a href='/notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=9'>[9]</a>&nbsp;<a href='/notice/PT_NTJ_NTQ001.jsp?type=P&&page_no=9'><img align=absmiddle src='../../img/bts_end.gif' border=0 alt='Trang cuối'></a></td></tr></table>
- 
-						
-				
-				<form name="deleteForm" action="">
-					<input type="hidden" name="cmd" value="delete">
-					<input type="hidden" name="noticeNo" value="">
-				</form>
-				
-    	 
-       <div class="wrapperfoot"><script language="javascript" src="http://muasamcong.mpi.gov.vn/js/copyright.js"></script></div>
-     </div>  
-</body>
-<scr
-312
-ipt language="javascript">
-	function MM_openBrWindow(theURL,winName,features) {
-    	window.open(theURL,winName,features);
-    }
-    
-	function doSearch() {
-		if(!check_validation())  return;		
-		document.searchForm.action = "PT_NTJ_NTQ001.jsp?type=P";
-		document.searchForm.method = "post";
-		document.searchForm.submit();
-	}
-	
-	function check_validation() {
-		/*if(document.searchForm.wdateFrom.value == null || document.searchForm.wdateFrom.value.length != 10) {
-			alert("Ngày bắt đầu tìm kiếm không hợp lệ.");
-			return false;
-		}
-		if(document.searchForm.wdateTo.value == null || document.searchForm.wdateTo.value.length != 10) {
-			alert("Ngày kết thúc tìm kiếm không hợp lệ.");
-			return false;
-		}*/
-		
-		return true;
-	}
-	
-	fu
-231
-nction doDelete(noticeNo) {
-		if(!confirm("Thông báo ("+noticeNo+") sẽ bị xóa, bạn có chắc chắn muốn xóa?")) return;
-		window.open("",'deleteWin','status=yes,resizable=yes,scrollbars=no,toolbar=no,width=400,height=300');
-		document.deleteForm.target = "deleteWin";
-		document.deleteForm.action = "servlet/notice/PT_NTB_NTA015";
-		document.deleteForm.method = "post";
-		document.deleteForm.noticeNo.value = noticeNo;
-		document.deleteForm.submit();
-	}
+<title>Xem thông tin chi tiết thông báo</title>
+<script type="text/javascript">
 	function sendLink(urlLink){
 		window.location = urlLink;
 	}
 </script>
+</head>
+
+<body>
+<div class="col-750 clearfix last">
+	<h1 class="pageTitle"><i class="icon-title"></i>Xem chi tiết thông báo</h1>
+	
+				<table width="100%" border="0" cellspacing="1" cellpadding="2" class="tr" align="center">
+					<tr height="4" class='LINE'>
+						<td colspan="4"></td>
+					</tr>
+					<tr>
+				       <td class='TIT' width="15%">Tiêu đề</td>
+				       <td class='tdb' colspan="3">Góp ý dự thảo Thông tư Quy định chi tiết lập Báo cáo thẩm định hồ sơ mời quan tâm, hồ sơ mời sơ tuyển, hồ sơ mời thầu, hồ sơ yêu cầu; kết quả đánh giá hồ sơ quan tâm, hồ sơ dự sơ tuyển, hồ sơ đề xuất về kỹ thuật, kết quả lựa chọn nhà thầu.</td>
+				   </tr>
+				   	<tr>
+				       <td class='TIT' width="15%">Phân loại</td>
+				       <td class='tdb' colspan="3">Thông báo của Bộ</td>
+				   </tr>
+				   <!--
+				   <tr>
+				       <td class='TIT' width="15%">Người soạn</td>
+				       <td class='tdb' width="35%">Người quản trị hệ thống</td>
+				       <td class='TIT' width="15%">Ngày tạo</td>
+				       <td class='tdb' width="35%">30/06/2015</td>
+				   </tr>
+				   -->
+				   	<tr>
+				       <td class='TIT' width="15%">Ngày tạo</td>
+				       <td class='tdb' colspan="3">30/06/2015</td>
+				   </tr>
+				   
+				   		
+							<tr>
+								<td class='TIT'  >File đính kèm</td>
+								<td class='tdb'  colspan="3">20150629 du thao thong tu tham dinh.rar <a href="/servlet/fileAttachment/FileDownload?fileId=3313" target="_blank">Download</a></td>
+							</tr>
+						
+				   			 
+				   	<tr>
+				   		<td class='TIT'>Nội dung</td>
+				       	<td class='tdb'  colspan="3" >Căn cứ Luật đấu thầu số 43/2013/QH13, Cục Quản lý đấu thầu đã dự thảo Thông tư Quy định chi tiết lập Báo cáo thẩm định hồ sơ mời quan tâm, hồ sơ mời sơ tuyển, hồ sơ mời thầu, hồ sơ yêu cầu; kết quả đánh giá hồ sơ quan tâm, hồ sơ dự sơ tuyển, hồ sơ đề xuất về kỹ thuật, kết quả lựa chọn nhà thầu.<br>
+<br>
+Thông tin góp ý xin gửi về<b><i> Anh Nghiêm Ngọc Dũng</b></i>, Cục Quản lý đấu thầu, Bộ KHĐT<b><i>trước ngày 20/8/2015 qua email: nghiemngocdung@gmail.com</b></i><br>
+<br>
+Cục Quản lý đấu thầu xin gửi bản mềm Dự thảo Thông tư nói trên do Phòng Nội dung thông tin cung cấp. <br>
+<br>
+Xin chân thành cảm ơn những góp ý quý báu của các đơn vị, tổ chức có liên quan./.</td>
+				   	</tr>
+					<tr height="2" class='LINE'>
+						<td colspan="4"></td>
+					</tr>
+				</table> 
+				<form name="deleteForm" method="post" enctype="multipart/form-data"> 
+					   			<input type="hidden" name="cmd" value="">
+								<input type="hidden" name="noticeNo" value="3112" >
+								<input type="hidden" name="userId" value="null" >
+							 </form>
+				<p align="center">
+							
+							<input type="button" class="commonbutton" value="Quay lại" onclick="javascript: history.back(-1);"/>
+							<!-- <img src="../img/bt_close.gif" width="56" height="20" border="0" onClick="javascript:window.close()" style='cursor:hand'>  -->
+						</p>
+ 
+       <div class="wrapperfoot"><script language="javascript" src="http://muasamcong.mpi.gov.vn/js/copyright.js"></script></div>
+     </div> 
+
+
+</body>
+<script type="text/javascript">
+	function doDelete() {
+	 if (!confirm('Bạn thực sự muốn xóa thông báo này chứ?')==true) return;
+	 
+		 	document.deleteForm.cmd.value = "delete";
+			 document.deleteForm.action = "/servlet/notice/PT_NTB_NTA015";
+			 document.deleteForm.submit(); 
+	}
+</script>
 </html>
-
-0
-

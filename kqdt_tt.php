@@ -22,7 +22,7 @@ $message = new Message();
 
 //route
 $route = new Route();
-$route->setCategory(HANG_HOA);
+$route->setCategory(constant($_GET['c']));
 $route->setPage('KET_QUA_DAU_THAU_TRUC_TIEP');
 
 $db = new db_query($route->getBaseUrl());
@@ -118,6 +118,7 @@ if ($row = mysql_fetch_assoc($db->result)) {
         updateDB('route', 'id', $row['id'], $up);
 
     } else {
+
         $message->insert('Đã lấy hết dữ liệu');
 
         //update route

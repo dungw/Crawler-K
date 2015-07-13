@@ -22,7 +22,7 @@ $message = new Message();
 
 //route
 $route = new Route();
-$route->setCategory(XAY_LAP);
+$route->setCategory(constant($_GET['c']));
 $route->setPage('THONG_BAO_MOI_THAU_QUOC_TE');
 
 $db = new db_query($route->getBaseUrl());

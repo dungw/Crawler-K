@@ -22,12 +22,11 @@ $message = new Message();
 
 //route
 $route = new Route();
-$route->setCategory(HANG_HOA);
+$route->setCategory(constant($_GET['c']));
 $route->setPage('THONG_BAO_MOI_THAU');
 
 $db = new db_query($route->getBaseUrl());
 if ($row = mysql_fetch_assoc($db->result)) {
-
     if ($row['page_total'] <= 0 || $row['page_no'] < $row['page_total']) {
 
         //base url

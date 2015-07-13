@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 
-print '<meta http-equiv="refresh" content="100" />';
+print '<meta http-equiv="refresh" content="1" />';
 
 // Vars
 $msg = '';

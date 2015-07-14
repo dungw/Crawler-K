@@ -71,7 +71,8 @@ if ($row = mysql_fetch_assoc($db->result)) {
                         $cTd = 0;
                         foreach ($domTds as $td) {
                             if ($cTd == 1) {
-                                $rec['so_tbmt'] = '"' . addslashes(trim($td->plaintext)) . '"';
+                                $soTBMT = trim($td->plaintext);
+                                $rec['so_tbmt'] = '"' . addslashes($soTBMT) . '"';
                             }
                             if ($cTd == 2) {
                                 $rec['ben_mt'] = '"' . addslashes(trim($td->plaintext)) . '"';
@@ -91,7 +92,7 @@ if ($row = mysql_fetch_assoc($db->result)) {
                     if (isset($rec['so_tbmt']) && $rec['so_tbmt'] != null) {
                         if (isset($_GET['p']) && $_GET['p'] == 'new') {
 
-                            if (!checkDuplicate($rec['so_tbmt'])) {
+                            if (!checkDuplicate($soTBMT)) {
                                 $data[$cTr] = $rec;
                             }
                         } else {
@@ -137,7 +138,6 @@ if ($row = mysql_fetch_assoc($db->result)) {
         $up['done'] = 1;
         updateDB('route', 'id', $row['id'], $up);
     }
-
 }
 
 print $message->toHtml();
@@ -147,10 +147,9 @@ unset($db);
 
 function checkDuplicate($key)
 {
-    $sql = "SELECT id FROM tbmt_qt WHERE so_tbmt = '". $key ."' LIMIT 1";
-    $db = new db_query($sql);
-    if ($rows = mysql_fetch_assoc($db->result)) {
-        print_r($db);
+    $sql = "SELECT count(id) AS count FROM tbmt_qt WHERE so_tbmt = '". $key ."' LIMIT 1";
+    $db = new db_count($sql);
+    if ($db->total > 0) {
         return true;
     } else {
         return false;

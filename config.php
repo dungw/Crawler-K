@@ -13,8 +13,8 @@ require_once $lib_direct . 'functions.php';
 require_once 'common/Route.php';
 require_once 'common/Message.php';
 
-define('ENVIRONMENT', 'develop');
-//define('ENVIRONMENT', 'production');
+//define('ENVIRONMENT', 'develop');
+define('ENVIRONMENT', 'production');
 
 
 

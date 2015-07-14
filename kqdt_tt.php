@@ -125,7 +125,6 @@ if ($row = mysql_fetch_assoc($db->result)) {
         $up['done'] = 1;
         updateDB('route', 'id', $row['id'], $up);
     }
-
 }
 
 print $message->toHtml();

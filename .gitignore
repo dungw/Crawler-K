@@ -3,6 +3,8 @@
 
 #crawler port
 /8070
+/8082
+/80
 
 #crawler port
 attachment/*

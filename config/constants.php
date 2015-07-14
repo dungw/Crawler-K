@@ -13,7 +13,12 @@ define('PHI_TU_VAN', 15);
  */
 define('TYPE_NT', 1);
 define('TYPE_MT', 2);
-define('TYPE_THONG_BAO_KHDT', 3);
-define('TYPE_THONG_BAO_BEN_MT', 4);
+define('TB_KHDT', 3);
+define('TB_BEN_MT', 4);
 define('DOMAIN', 'http://muasamcong.mpi.gov.vn:8070');
 define('PORT', 8070);
+
+/**
+ * Page size
+ */
+define('PAGE_SIZE_TB', 100);

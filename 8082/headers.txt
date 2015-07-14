@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------
-http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=13/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=100&firstCall=N&pageNo=3&gubun=15
+http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ7011.jsp?gubun=1&fromDate=10/06/2005&toDate=13/07/2015&pageSize=10&pageNo=1&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N
 
-GET /GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=13/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=100&firstCall=N&pageNo=3&gubun=15 HTTP/1.1
+GET /GG/EP_SSJ_GGQ7011.jsp?gubun=1&fromDate=10/06/2005&toDate=13/07/2015&pageSize=10&pageNo=1&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N HTTP/1.1
 Host: muasamcong.mpi.gov.vn
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 Accept-Language: en-us,en;q=0.5
@@ -12,12 +12,12 @@ Connection: Close
 
 HTTP/1.1 200 OK
 Server: Sun-ONE-Web-Server/6.1
-Date: Mon, 13 Jul 2015 07:44:49 GMT
+Date: Mon, 13 Jul 2015 21:09:06 GMT
 Content-type: text/html;charset=UTF-8
-Set-Cookie: ipmsperf_uuid=4180986099889167778; expires=Tuesday, 12-Jul-2016 07:43:32 GMT; path=/
-Set-Cookie: JSESSIONID=gGxlVjsGcTwWnYYZj2hQ3jsThBQmDJTYTd166G2LhD2KjRHK9PJy!-732406297; path=/
+Set-Cookie: ipmsperf_uuid=8831186359799153585; expires=Tuesday, 12-Jul-2016 21:07:47 GMT; path=/
+Set-Cookie: JSESSIONID=66M9VkyDQwQtmQX7XfzKL2VKd84Hd2ynznlMTG43cnNSvN5XxLdg!-732406297; path=/
 Connection: close
 
 <... See page contents in 8082/1.html ...>
 
------- Transferred 108kb in 1.9 sec ------
+------ Transferred 16kb in 2.0 sec ------

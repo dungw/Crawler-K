@@ -34,7 +34,12 @@ if ($row = mysql_fetch_assoc($db->result)) {
         $route->setBaseUrl($row['url']);
 
         //set page number
-        $route->setPageNo($row['page_no'] + 1);
+        if (isset($_GET['p']) && $_GET['p'] == 'new') {
+            $route->setPageNo(1);
+            $route->setMode('new');
+        } else {
+            $route->setPageNo($row['page_no'] + 1);
+        }
 
         //complete url
         $url = $route->getUrl();
@@ -84,28 +89,46 @@ if ($row = mysql_fetch_assoc($db->result)) {
                     }
 
                     if (isset($rec['so_tbmt']) && $rec['so_tbmt'] != null) {
-                        $data[$cTr] = $rec;
+                        if (isset($_GET['p']) && $_GET['p'] == 'new') {
+
+                            if (!checkDuplicate($rec['so_tbmt'])) {
+                                $data[$cTr] = $rec;
+                            }
+                        } else {
+                            $data[$cTr] = $rec;
+                        }
+
                     }
                     $cTr++;
                 }
             }
         }
 
+        if (isset($_GET['p']) && $_GET['p'] == 'new') {
+
+            //update route
+            $up['last_time'] = time();
+            updateDB('route', 'id', $row['id'], $up);
+
+        } else {
+
+            //pagination
+            $domPagination = $html->find('td[class=page]', 0);
+            if (!empty($domPagination)) {
+                $numArr = get_numerics($domPagination->plaintext);
+                $total = intval($numArr[0]);
+                $up['page_total'] = ceil($total / $route->getPageSize());
+            }
+
+            //update route
+            updateDB('route', 'id', $row['id'], $up);
+
+        }
+
         //insert data
         if (!empty($data)) {
             intoSeeks('tbmt_qt', $data);
         }
-
-        //pagination
-        $domPagination = $html->find('td[class=page]', 0);
-        if (!empty($domPagination)) {
-            $numArr = get_numerics($domPagination->plaintext);
-            $total = intval($numArr[0]);
-            $up['page_total'] = ceil($total / $route->getPageSize());
-        }
-
-        //update route
-        updateDB('route', 'id', $row['id'], $up);
 
     } else {
         $message->insert('Đã lấy hết dữ liệu');
@@ -121,3 +144,15 @@ print $message->toHtml();
 if (isset($data)) dump($data);
 unset($html);
 unset($db);
+
+function checkDuplicate($key)
+{
+    $sql = "SELECT id FROM tbmt_qt WHERE so_tbmt = '". $key ."' LIMIT 1";
+    $db = new db_query($sql);
+    if ($rows = mysql_fetch_assoc($db->result)) {
+        print_r($db);
+        return true;
+    } else {
+        return false;
+    }
+}

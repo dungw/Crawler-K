@@ -43,7 +43,9 @@ if ($row = mysql_fetch_assoc($db->result)) {
         $message->insert($url);
 
         //get html
+        $url = 'http://muasamcong.mpi.gov.vn:8082/NC/EP_COJ_NCQ812.jsp?noticeType=Y&instituName=&instituCode=&radOrgan=0&noticeNm=&openbidDate1=14%2F06%2F2015&openbidDate2=14%2F07%2F2015&referNum=&pageSize=10&notice_num=&orgCode=&searchType=1&bidType=1';
         $html = getHTML($url, 0, 8082);
+        print $html;die;
 
         //update data
         $up['page_no'] = $row['page_no'] + 1;

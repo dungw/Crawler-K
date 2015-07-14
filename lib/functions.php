@@ -234,6 +234,7 @@ function createFolderImage($file, $img_path) {
 
 // Create folder store pictures
 function createFolderImage1($file, $img_path) {
+
 	$path1 = date('Y');
 	$path2 = date('m');
 	$path3 = date('d');
@@ -256,7 +257,7 @@ function createFolderImage1($file, $img_path) {
 	$tmp = dirView($tempPath, false, true);
 	$tmp1 = getBiggestNum($tmp[1]);
 	$curNumDir = sprintf('%02d', $tmp1);
-	$curNumber = countFiles($tempPath . '/' . $curNumDir . '/', array('swf','jpg','jpeg','gif','png'));
+	$curNumber = countFiles($tempPath . '/' . $curNumDir . '/', array('swf','jpg','jpeg','gif','png', 'rar'));
 	
 	if ($curNumber >= 200) {
 		$curNumDir = sprintf('%02d', $tmp1 + 1);
@@ -274,7 +275,7 @@ function createFolderImage1($file, $img_path) {
 	 */
 	$filePath = $curDir . $file;
 	$a = '/' . $path1 . '/' . $path2 . '/' . $path3 . '/' . $curNumDir . '/' . $file;
-	$dirThumb1 = $curDir . 'thumb100_100/';
+	//$dirThumb1 = $curDir . 'thumb100_100/';
 
 	return array($filePath, $a, $curDir);
 }

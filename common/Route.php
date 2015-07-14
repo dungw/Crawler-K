@@ -11,16 +11,25 @@ class Route
 {
     const ACTIVE = 1;
     const INACTIVE = 0;
+    const MODE_NEW = 'new';
 
     private $category = null;
     private $page = null;
     private $error = null;
+    private $mode = null;
 
     public $baseUrl = null;
     public $dateFrom = '10/06/2005';
     public $dateTo = null;
-    public $pageSize = 100;
+    public $pageSize = 10;
     public $pageNo = 1;
+
+    public function setMode($mode)
+    {
+        if ($mode == self::MODE_NEW) {
+            $this->mode = $mode;
+        }
+    }
 
     public function setCategory($id)
     {
@@ -95,7 +104,11 @@ class Route
 
     public function getBaseUrl()
     {
-        $sql = "SELECT * FROM route WHERE category = ". $this->category ." AND page = '". $this->page ."' AND active = ". self::ACTIVE ." LIMIT 1";
+        if (!$this->mode) {
+            $sql = "SELECT * FROM route WHERE category = ". $this->category ." AND page = '". $this->page ."' AND done = 0 AND active = ". self::ACTIVE ." LIMIT 1";
+        } elseif ($this->mode == self::MODE_NEW) {
+            $sql = "SELECT * FROM route WHERE category = ". $this->category ." AND page = '". $this->page ."' AND active = ". self::ACTIVE ." ORDER BY last_time LIMIT 1";
+        }
         return $sql;
     }
 

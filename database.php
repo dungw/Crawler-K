@@ -10,7 +10,7 @@ class db_init {
         $this->server	  = "localhost";
 		$this->username   = "root";
 		$this->password   = "";
-		$this->database   = "cr.com";
+		$this->database   = "crawler_muasamcong";
 
 	}
 	function __destruct()

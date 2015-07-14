@@ -27,25 +27,28 @@ $route->setPage('THONG_BAO_MOI_THAU');
 
 $db = new db_query($route->getBaseUrl());
 if ($row = mysql_fetch_assoc($db->result)) {
-    if ($row['page_total'] <= 0 || $row['page_no'] < $row['page_total']) {
 
-        //base url
-        $route->setBaseUrl($row['url']);
+    //base url
+    $route->setBaseUrl($row['url']);
 
-        //set page number
+    //set page number
+    if (isset($_GET['p']) && $_GET['p'] == 'new') {
+        $route->setPageNo(1);
+        $route->setMode('new');
+    } else {
         $route->setPageNo($row['page_no'] + 1);
+    }
 
-        //complete url
-        $url = $route->getUrl();
+    //complete url
+    $url = $route->getUrl();
 
-        //add url to message
-        $message->insert($url);
+    //add url to message
+    $message->insert($url);
 
-        //get html
-        $html = getHTML($url, 0, 8082);
+    //get html
+    $html = getHTML($url, 0, 8082);
 
-        //update data
-        $up['page_no'] = $row['page_no'] + 1;
+    if ($row['page_total'] <= 0 || $row['page_no'] < $row['page_total']) {
 
         $domTbl = $html->find('form table', 1);
         if (!empty($domTbl)) {
@@ -83,28 +86,46 @@ if ($row = mysql_fetch_assoc($db->result)) {
                     }
 
                     if (isset($rec['so_tbmt']) && $rec['so_tbmt'] != null) {
-                        $data[$cTr] = $rec;
+                        if (isset($_GET['p']) && $_GET['p'] == 'new') {
+                            if (!checkDuplicate($rec['so_tbmt'])) {
+                                $data[$cTr] = $rec;
+                            }
+                        } else {
+                            $data[$cTr] = $rec;
+                        }
+
                     }
                     $cTr++;
                 }
             }
         }
 
+        if (isset($_GET['p']) && $_GET['p'] == 'new') {
+
+            //update route
+            $up['last_time'] = time();
+            updateDB('route', 'id', $row['id'], $up);
+
+        } else {
+
+            //pagination
+            $domPagination = $html->find('td[class=page]', 0);
+            if (!empty($domPagination)) {
+                $numArr = get_numerics($domPagination->plaintext);
+                $total = intval($numArr[0]);
+                $up['page_total'] = ceil($total / $route->getPageSize());
+            }
+
+            //update route
+            $up['page_no'] = $row['page_no'] + 1;
+            updateDB('route', 'id', $row['id'], $up);
+
+        }
+
         //insert data
         if (!empty($data)) {
             intoSeeks('tbmt', $data);
         }
-
-        //pagination
-        $domPagination = $html->find('td[class=page]', 0);
-        if (!empty($domPagination)) {
-            $numArr = get_numerics($domPagination->plaintext);
-            $total = intval($numArr[0]);
-            $up['page_total'] = ceil($total / $route->getPageSize());
-        }
-
-        //update route
-        updateDB('route', 'id', $row['id'], $up);
 
     } else {
         $message->insert('Đã lấy hết dữ liệu');
@@ -120,3 +141,14 @@ print $message->toHtml();
 if (isset($data)) dump($data);
 unset($html);
 unset($db);
+
+function checkDuplicate($key)
+{
+    $sql = "SELECT id FROM tbmt WHERE so_tbmt = '". $key ."'";
+    $total = new db_count($sql);
+    if ($total > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}

@@ -68,8 +68,12 @@ if ($row = mysql_fetch_assoc($db->result)) {
                         $cTd = 0;
                         foreach ($domTds as $td) {
                             if ($cTd == 1) {
-                                $soTBMT = trim($td->plaintext);
-                                $rec['so_tbmt'] = '"' . addslashes($soTBMT) . '"';
+                                $soTbmt = trim($td->plaintext);
+                                $t = explode('-', $soTbmt);
+                                $bidNo = $t[0];
+                                $bidTurnNo = $t[1];
+                                $bidType =
+                                $rec['url'] = '"' . addslashes($href) . '"';
                             }
                             if ($cTd == 2) {
                                 $rec['ben_mt'] = '"' . addslashes(trim($td->plaintext)) . '"';
@@ -125,7 +129,7 @@ if ($row = mysql_fetch_assoc($db->result)) {
 
         //insert data
         if (!empty($data)) {
-            intoSeeks('tbmt', $data);
+            intoSeeks('tbmt_temp', $data);
         }
 
     } else {

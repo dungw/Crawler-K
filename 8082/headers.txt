@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------
-http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=17/07/2015&pageSize=10&pageNo=11&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N
+http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=17/07/2015&pageSize=10&pageNo=43&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N
 
-GET /GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=17/07/2015&pageSize=10&pageNo=11&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N HTTP/1.1
+GET /GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=17/07/2015&pageSize=10&pageNo=43&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N HTTP/1.1
 Host: muasamcong.mpi.gov.vn
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 Accept-Language: en-us,en;q=0.5
@@ -12,12 +12,12 @@ Connection: Close
 
 HTTP/1.1 200 OK
 Server: Sun-ONE-Web-Server/6.1
-Date: Thu, 16 Jul 2015 22:55:27 GMT
+Date: Fri, 17 Jul 2015 03:40:39 GMT
 Content-type: text/html;charset=UTF-8
-Set-Cookie: ipmsperf_uuid=-7083450326687329035; expires=Friday, 15-Jul-2016 22:53:57 GMT; path=/
-Set-Cookie: JSESSIONID=zzLBVy2C6xQJ5tTnTqTrGnQnsQhfPYtmjLmWBPsJMfGCThTtlGgJ!-732406297; path=/
+Set-Cookie: ipmsperf_uuid=4795866128626598558; expires=Saturday, 16-Jul-2016 03:39:08 GMT; path=/
+Set-Cookie: JSESSIONID=y5n0Vy4Z6PnYkrn1vnrlDDTd2SDRV5hLv2vcP9433h6xMzfYCGp2!-732406297; path=/
 Connection: close
 
 <... See page contents in 8082/1.html ...>
 
------- Transferred 23kb in 3.6 sec ------
+------ Transferred 24kb in 3.6 sec ------

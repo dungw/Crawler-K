@@ -52,6 +52,7 @@ class db_query
 		
 		mysql_query("SET NAMES 'utf8'");
 		$this->result = mysql_query($query,$this->links);
+        $this->total = mysql_affected_rows();
 		
 		$time_end = $this->microtime_float();
 		$time = $time_end - $time_start;

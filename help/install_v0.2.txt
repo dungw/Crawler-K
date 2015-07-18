@@ -1,0 +1,14 @@
+----------------------- Huong dan su dung -----------------------------
+1. Tạo 1 project mới trong Xampp(hoặc Wamp)
+    - Tạo 1 thư mục mới trong htdocs và giải nén code, đặt tên miền tùy chọn(ex: crawler.com).
+    - Tạo 1 database mới trong phpmyadmin, đặt tên là crawler_muasamcong.
+    - Import file sql tại đường dẫn: thu_muc_code/database/crawler_muasamcong.sql vào database mới tạo.
+
+2. Chạy file index.php ở thư mục root
+    - Get All: Lấy tất cả
+    - Get New: lấy tin mới
+
+3. Lưu ý:
+    - Để lấy thông báo của Bộ KHĐT hay của Bên mời thầu, chạy cả mục Danh sách và Chi tiết. Nên chạy Danh sách trước khi chạy Chi tiết khoảng 10s
+    - Chỉ nên chạy Get New sau khi đã hoàn thành Get All
+    - Chỉ check trùng tin khi chạy Get New

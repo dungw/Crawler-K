@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------
-http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=17/07/2015&pageSize=10&pageNo=43&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N
+http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N
 
-GET /GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=17/07/2015&pageSize=10&pageNo=43&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N HTTP/1.1
+GET /GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N HTTP/1.1
 Host: muasamcong.mpi.gov.vn
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 Accept-Language: en-us,en;q=0.5
@@ -12,12 +12,13 @@ Connection: Close
 
 HTTP/1.1 200 OK
 Server: Sun-ONE-Web-Server/6.1
-Date: Fri, 17 Jul 2015 03:40:39 GMT
+Date: Thu, 23 Jul 2015 02:02:23 GMT
 Content-type: text/html;charset=UTF-8
-Set-Cookie: ipmsperf_uuid=4795866128626598558; expires=Saturday, 16-Jul-2016 03:39:08 GMT; path=/
-Set-Cookie: JSESSIONID=y5n0Vy4Z6PnYkrn1vnrlDDTd2SDRV5hLv2vcP9433h6xMzfYCGp2!-732406297; path=/
+Set-Cookie: ipmsperf_uuid=4622107591546294593; expires=Friday, 22-Jul-2016 02:00:29 GMT; path=/
+Set-Cookie: JSESSIONID=ygPRVwKhs1zGhJpFBrWzTQpJFGzGDl7pntjft4ZGCJsFMTmGzKGv!-732406297; path=/
+Transfer-encoding: chunked
 Connection: close
 
 <... See page contents in 8082/1.html ...>
 
------- Transferred 24kb in 3.6 sec ------
+------ Transferred 23kb in 4.1 sec ------

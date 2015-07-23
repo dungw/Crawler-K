@@ -10,20 +10,15 @@ include 'config.php';
 use common\Route;
 use common\Message;
 
-if (ENVIRONMENT == 'production') {
-    $loop = 1;
-} elseif (ENVIRONMENT == 'develop') {
-    $loop = 100;
-}
-print '<meta http-equiv="refresh" content="'. $loop .'" />';
-
-//message
-$message = new Message();
-
 //route
 $route = new Route();
 $route->setCategory(constant($_GET['c']));
 $route->setPage('THONG_BAO_MOI_THAU');
+
+Setting_Env($route);
+
+//message
+$message = new Message();
 
 $db = new db_query($route->getBaseUrl());
 if ($row = mysql_fetch_assoc($db->result)) {
@@ -77,6 +72,9 @@ if ($row = mysql_fetch_assoc($db->result)) {
                                 if ($url != '') {
                                     $rec['url'] = '"' . addslashes(trim($url)) . '"';
                                 }
+                                $rec['so_tbmt'] = '"' . addslashes(trim($soTbmt)) . '"';
+                                $rec['type'] = TBMT_TYPE;
+                                $rec['category'] = constant($_GET['c']);
                             }
                             $cTd++;
                         }
@@ -141,7 +139,7 @@ unset($db);
 
 function checkDuplicate($key)
 {
-    $sql = "SELECT count(id) AS count FROM tbmt WHERE so_tbmt = '". $key ."'";
+    $sql = "SELECT count(id) AS count FROM tbmt_temp WHERE so_tbmt = '". $key ."'";
     $db = new db_count($sql);
     if ($db->total > 0) {
         return true;

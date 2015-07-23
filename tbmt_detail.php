@@ -10,16 +10,13 @@ include 'config.php';
 use common\Route;
 use common\Message;
 
-if (ENVIRONMENT == 'production') {
-    $loop = 1;
-} elseif (ENVIRONMENT == 'develop') {
-    $loop = 100;
-}
-print '<meta http-equiv="refresh" content="' . $loop . '" />';
+Setting_Env();
 
 //message
 $message = new Message();
-$query = 'SELECT * FROM tbmt_temp WHERE done = 0 LIMIT 1';
+
+$category = constant($_GET['c']);
+$query = 'SELECT * FROM tbmt_temp WHERE category = '. $category .' done = 0 LIMIT 1';
 $db = new db_query($query);
 if ($row = mysql_fetch_assoc($db->result)) {
 

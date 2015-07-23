@@ -1,4 +1,18 @@
 <?php
+function Setting_Env($route = null)
+{
+    if (ENVIRONMENT == 'production') {
+        $loop = LOOP_PRODUCTION;
+        if ($route) {
+            $route->setPageSize(PAGE_SIZE_PRODUCTION);
+        }
+        error_reporting(E_ALL);
+    } elseif (ENVIRONMENT == 'develop') {
+        $loop = LOOP_DEVELOP;
+    }
+    print '<meta http-equiv="refresh" content="'. $loop .'" />';
+}
+
 function analyzeTableDom($html, $rule)
 {
     $data = [];

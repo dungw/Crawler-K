@@ -21,6 +21,12 @@ define('PORT', 8070);
 define('TBMT_DETAIL_URL', 'http://muasamcong.mpi.gov.vn:8081/GG/EP_MPV_GGQ999.jsp');
 define('TBMT_BID_TYPE', 1);
 define('TBMTQT_BID_TYPE', 3);
+define('LOOP_PRODUCTION', 3);
+define('LOOP_DEVELOP', 200);
+define('PAGE_SIZE_PRODUCTION', 100);
+define('PAGE_SIZE_DEVELOP', 10);
+define('TBMT_TYPE_QT', 2);
+define('TBMT_TYPE', 1);
 
 /**
  * Page size

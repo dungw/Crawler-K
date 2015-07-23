@@ -10,13 +10,6 @@ include 'config.php';
 use common\Route;
 use common\Message;
 
-if (ENVIRONMENT == 'production') {
-    $loop = 1;
-} elseif (ENVIRONMENT == 'develop') {
-    $loop = 100;
-}
-print '<meta http-equiv="refresh" content="'. $loop .'" />';
-
 //message
 $message = new Message();
 
@@ -24,6 +17,8 @@ $message = new Message();
 $route = new Route();
 $route->setCategory(constant($_GET['c']));
 $route->setPage('THONG_BAO_MOI_THAU_QUOC_TE');
+
+Setting_Env($route);
 
 $db = new db_query($route->getBaseUrl());
 if ($row = mysql_fetch_assoc($db->result)) {

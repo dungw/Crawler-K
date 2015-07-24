@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------
-http://muasamcong.mpi.gov.vn:8081/GG/EP_MPV_GGQ999.jsp?bid_no=20150705657&bid_turnno=00&bid_type=1
+http://muasamcong.mpi.gov.vn:8081/GG/EP_MPV_GGQ999.jsp?bid_no=20150705528&bid_turnno=00&bid_type=1
 
-GET /GG/EP_MPV_GGQ999.jsp?bid_no=20150705657&bid_turnno=00&bid_type=1 HTTP/1.1
+GET /GG/EP_MPV_GGQ999.jsp?bid_no=20150705528&bid_turnno=00&bid_type=1 HTTP/1.1
 Host: muasamcong.mpi.gov.vn
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 Accept-Language: en-us,en;q=0.5
@@ -10,4 +10,15 @@ Keep-Alive: 300
 User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9) Gecko/2008052906 Firefox/3.0
 Connection: Close
 
------- Transferred 0kb in 0.0 sec ------
+HTTP/1.1 200 OK
+Server: Sun-ONE-Web-Server/6.1
+Date: Fri, 24 Jul 2015 00:24:23 GMT
+Content-type: text/html; charset=utf-8
+Set-Cookie: ipmsperf_uuid=-6079255470350570677; expires=Saturday, 23-Jul-2016 00:22:26 GMT; path=/
+Set-Cookie: JSESSIONID=FfkqVxFBzyT1QQHhcx4JSgqzC1vZLymqQdX9D16QMLTz2nhnGv8G!1209791818; path=/
+Transfer-encoding: chunked
+Connection: close
+
+<... See page contents in 8081/1.html ...>
+
+------ Transferred 17kb in 2.1 sec ------

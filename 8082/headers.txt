@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------------
-http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N
+http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1
 
-GET /GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N HTTP/1.1
+GET /GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1 HTTP/1.1
 Host: muasamcong.mpi.gov.vn
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 Accept-Language: en-us,en;q=0.5
@@ -12,13 +12,13 @@ Connection: Close
 
 HTTP/1.1 200 OK
 Server: Sun-ONE-Web-Server/6.1
-Date: Thu, 23 Jul 2015 02:02:23 GMT
+Date: Fri, 24 Jul 2015 01:10:25 GMT
 Content-type: text/html;charset=UTF-8
-Set-Cookie: ipmsperf_uuid=4622107591546294593; expires=Friday, 22-Jul-2016 02:00:29 GMT; path=/
-Set-Cookie: JSESSIONID=ygPRVwKhs1zGhJpFBrWzTQpJFGzGDl7pntjft4ZGCJsFMTmGzKGv!-732406297; path=/
+Set-Cookie: ipmsperf_uuid=-5609190781973006297; expires=Saturday, 23-Jul-2016 01:08:27 GMT; path=/
+Set-Cookie: JSESSIONID=bSsRVxQJ1tH4kbRw1ft3W1rThJr8QN7FjCw72SNG2128cfVy9pgd!-732406297; path=/
 Transfer-encoding: chunked
 Connection: close
 
 <... See page contents in 8082/1.html ...>
 
------- Transferred 23kb in 4.1 sec ------
+------ Transferred 20kb in 3.3 sec ------

@@ -40,7 +40,7 @@ if ($row = mysql_fetch_assoc($db->result)) {
         $url = $route->getUrl();
 
         //add url to message
-        $message->insert($url);
+        $message->insertUrl($url);
 
         //get html
         $html = getHTML($url, 0, 8082);
@@ -66,17 +66,19 @@ if ($row = mysql_fetch_assoc($db->result)) {
                         $cTd = 0;
                         foreach ($domTds as $td) {
                             if ($cTd == 1) {
-                                $soTBMT = trim($td->plaintext);
-                                $rec['so_tbmt'] = '"' . addslashes($soTBMT) . '"';
-                            }
-                            if ($cTd == 2) {
-                                $rec['ben_mt'] = '"' . addslashes(trim($td->plaintext)) . '"';
-                            }
-                            if ($cTd == 3) {
-                                $rec['ten_goi_thau'] = '"' . addslashes(trim($td->plaintext)) . '"';
-                            }
-                            if ($cTd == 4) {
-                                $rec['thoi_gian'] = '"' . addslashes(trim($td->plaintext)) . '"';
+                                $soTbmt = trim($td->plaintext);
+                                $t = explode('-', $soTbmt);
+                                $bid = [];
+                                $bid[] = 'bid_no=' . $t[0];
+                                $bid[] = 'bid_turnno=' . $t[1];
+                                $bid[] = 'bid_type=' . TBMT_BID_TYPE;
+                                $url = TBMT_DETAIL_URL . '?' . implode('&', $bid);
+                                if ($url != '') {
+                                    $rec['url'] = '"' . addslashes(trim($url)) . '"';
+                                }
+                                $rec['so_tbmt'] = '"' . addslashes(trim($soTbmt)) . '"';
+                                $rec['type'] = TBMT_TYPE_QT;
+                                $rec['category'] = constant($_GET['c']);
                             }
                             $cTd++;
                         }
@@ -84,16 +86,14 @@ if ($row = mysql_fetch_assoc($db->result)) {
                         $rec['category'] = $route->getCategory();
                     }
 
-                    if (isset($rec['so_tbmt']) && $rec['so_tbmt'] != null) {
+                    if ($soTbmt && $soTbmt != null && isset($rec['url'])) {
                         if (isset($_GET['p']) && $_GET['p'] == 'new') {
-
-                            if (!checkDuplicate($soTBMT)) {
+                            if (!checkDuplicate($soTbmt)) {
                                 $data[$cTr] = $rec;
                             }
                         } else {
                             $data[$cTr] = $rec;
                         }
-
                     }
                     $cTr++;
                 }
@@ -123,7 +123,7 @@ if ($row = mysql_fetch_assoc($db->result)) {
 
         //insert data
         if (!empty($data)) {
-            intoSeeks('tbmt_qt', $data);
+            intoSeeks('tbmt_temp', $data);
         }
 
     } else {
@@ -142,7 +142,7 @@ unset($db);
 
 function checkDuplicate($key)
 {
-    $sql = "SELECT count(id) AS count FROM tbmt_qt WHERE so_tbmt = '". $key ."' LIMIT 1";
+    $sql = "SELECT count(id) AS count FROM tbmt_temp WHERE so_tbmt = '". $key ."' AND type = '". TBMT_TYPE_QT ."'";
     $db = new db_count($sql);
     if ($db->total > 0) {
         return true;

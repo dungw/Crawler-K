@@ -1,4 +1,8 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/common/Ini_Parser.php';
+
+use common\Ini_Parser;
+
 function Setting_Env($route = null)
 {
     if (ENVIRONMENT == 'production') {
@@ -13,11 +17,24 @@ function Setting_Env($route = null)
     print '<meta http-equiv="refresh" content="'. $loop .'" />';
 }
 
-function analyzeTableDom($html, $rule)
+function analyzeTableDom($html, $columns, $iniFile)
 {
+    /**** PREPARE RULES */
+    $rule['config'] = Ini_Parser::parse($iniFile, true, 'config');
+    $rule['config']['range'] = array_map('intval', explode(',', $rule['config']['range']));
+    $rule['config']['unset'] = array_map('intval', explode(',', $rule['config']['unset']));
+
+    $rule['data'] = [];
+    if (!empty($columns)) {
+        foreach ($columns as $col) {
+            $rule['data'][$col] = Ini_Parser::parse($iniFile, true, $col);
+        }
+    }
+
     $data = [];
     $trs = $html->find('tr');
 
+    /**** EXECUTE */
     if (!empty($trs)) {
 
         //range and unset
@@ -25,6 +42,7 @@ function analyzeTableDom($html, $rule)
             if (isset($rule['config']['range'])) {
                 $cTr = 0;
                 foreach ($trs as $key => $tr) {
+
                     if ($cTr < $rule['config']['range'][0] || $cTr > $rule['config']['range'][1] || (isset($rule['config']['unset']) && in_array($cTr, $rule['config']['unset']))) {
                         unset($trs[$cTr]);
                     }
@@ -35,7 +53,7 @@ function analyzeTableDom($html, $rule)
             //re-sort
             $trs = array_values($trs);
         }
-print ($trs[0]->innertext);die;
+
         $dataRule = $rule['data'];
 
         $countTr = 0;
@@ -44,7 +62,6 @@ print ($trs[0]->innertext);die;
             $tds = $tr->find('td');
             if (!empty($tds)) {
                 $countTd = 0;
-                print $tr->outertext . '<br>';
                 foreach ($tds as $td) {
                     $countTd++;
 
@@ -59,7 +76,7 @@ print ($trs[0]->innertext);die;
                             }
 
                             if ($dataRule[$k]['type'] == 'str') {
-                                $data[$k] = '"' . addslashes(trim($value)) . '"';
+                                $data[$k] = '"' . addslashes(remove_spaces(trim($value))) . '"';
                             } elseif ($dataRule[$k]['type'] == 'int') {
                                 $data[$k] = intval(trim($value));
                             }
@@ -73,6 +90,12 @@ print ($trs[0]->innertext);die;
     }
 
     return $data;
+}
+
+function remove_spaces($str)
+{
+    $str = preg_replace('/(&nbsp;)+/', ' ', $str);
+    return preg_replace('/\s+/', ' ', $str);
 }
 
 function get_numerics($str)

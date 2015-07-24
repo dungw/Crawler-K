@@ -139,7 +139,7 @@ unset($db);
 
 function checkDuplicate($key)
 {
-    $sql = "SELECT count(id) AS count FROM tbmt_temp WHERE so_tbmt = '". $key ."'";
+    $sql = "SELECT count(id) AS count FROM tbmt_temp WHERE so_tbmt = '". $key ."' AND type = '". TBMT_TYPE ."'";
     $db = new db_count($sql);
     if ($db->total > 0) {
         return true;

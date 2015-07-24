@@ -15,7 +15,7 @@ Setting_Env();
 $message = new Message();
 
 $category = constant($_GET['c']);
-$query = 'SELECT * FROM tbmt_temp WHERE category = '. $category .' AND type = '. TBMT_TYPE .' AND done = 0 LIMIT 1';
+$query = 'SELECT * FROM tbmt_temp WHERE category = '. $category .' AND type = '. TBMT_TYPE_QT .' AND done = 0 LIMIT 1';
 $db = new db_query($query);
 if ($row = mysql_fetch_assoc($db->result)) {
 
@@ -42,7 +42,7 @@ if ($row = mysql_fetch_assoc($db->result)) {
     //insert data
     $id = 0;
     if (!empty($data)) {
-        $id = intoSeek('tbmt', $data);
+        $id = intoSeek('tbmt_qt', $data);
     }
 
     //update source

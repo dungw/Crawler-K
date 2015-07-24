@@ -12,6 +12,7 @@ require_once $lib_direct . 'phpWebHacks.php';
 require_once $lib_direct . 'functions.php';
 require_once 'common/Route.php';
 require_once 'common/Message.php';
+require_once 'common/Ini_Parser.php';
 
 define('ENVIRONMENT', 'develop');
 //define('ENVIRONMENT', 'production');

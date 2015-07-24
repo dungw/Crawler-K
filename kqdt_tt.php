@@ -10,20 +10,15 @@ include 'config.php';
 use common\Route;
 use common\Message;
 
-if (ENVIRONMENT == 'production') {
-    $loop = 1;
-} elseif (ENVIRONMENT == 'develop') {
-    $loop = 100;
-}
-print '<meta http-equiv="refresh" content="'. $loop .'" />';
-
-//message
-$message = new Message();
-
 //route
 $route = new Route();
 $route->setCategory(constant($_GET['c']));
 $route->setPage('KET_QUA_DAU_THAU_TRUC_TIEP');
+
+Setting_Env($route);
+
+//message
+$message = new Message();
 
 $db = new db_query($route->getBaseUrl());
 if ($row = mysql_fetch_assoc($db->result)) {
@@ -40,7 +35,7 @@ if ($row = mysql_fetch_assoc($db->result)) {
         $url = $route->getUrl();
 
         //add url to message
-        $message->insert($url);
+        $message->insertUrl($url);
 
         //get html
         $html = getHTML($url, 0, 8082);
@@ -103,7 +98,7 @@ if ($row = mysql_fetch_assoc($db->result)) {
 
         //insert data
         if (!empty($data)) {
-            intoSeeks('kqdt_tt', $data);
+            intoSeeks('kqdt_tt_temp', $data);
         }
 
         //pagination

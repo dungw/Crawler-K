@@ -1,5 +1,5 @@
 5a2
-﻿
+
 
 
 
@@ -44,19 +44,33 @@
             function goBack(){
                 history.back();
             }
-            function goAspTuchal(gongo_no, bid_type) {
-                var gubun = bid_type;
-                var docType = null;
-                window.open("http://muasamcong.mpi.gov.vn:8081/servlet/TC/EP_COV_TCQ302?gonggo_num="+gongo_no+"&gubun="+gubun+"&docType="+docType+"&lang=","tuchal","left=50, top=50, width=840, height=600, toolbar=no, scrollbars=yes, menubar=no, resizable=yes");
-                //window.open("http://www.g2b.go.kr:8084/servlet/TC/EP_COV_TCQ302?gonggo_num="+gongo_no+"&gubun="+gubun+"&docType="+docType,"tuchal","left=50, top=50, w
-5a8
-idth=840, height=600, toolbar=no, scrollbars=yes, menubar=no, resizable=yes");
+            function goBidSucc(bidNo,bidTurnNo, bidType) {
+                document.result.method = "post";
+                document.result.action = "http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ900.jsp?bidNo="+bidNo+"&bidTurnNo="+bidTurnNo+"&bidType="+bidType;
+                document.result.submit();
             }
+            
+            function goBidSuccFail(bidNo,bidTurnNo, bidType, no_bid_yn) {
+            	
+            	if(no_bid_yn===true){
+            		document.result.method = "post";
+                   document.result.action  = "http://
+5a8
+muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ913.jsp?bidNo="+bidNo+"&bidTurnNo="+bidTurnNo+"&bidType="+bidType;
+                    document.result.submit();
+                    return;
+            	}
+                document.result.method = "post";
+                document.result.action = "http://muasamcong.mpi.gov.vn:8082/GG/EP_SSJ_GGQ902.jsp?bidNo="+bidNo+"&bidTurnNo="+bidTurnNo+"&bidType="+bidType;
+                document.result.submit();
+            }
+            
+
             function goAspTuch(gonggo_num, gonggo_cha,bid_type) {
                 document.result.method = "post";
-                document.result.action = "http://muasamcong.mpi.gov.vn:8081/GG/EP_MPV_GGQ999.jsp?bid_no="+gonggo_num+"&bid_turnno="+gonggo_cha+"&bid_type="+bid_type+"&lang=";
+                document.result.action = "http://muasamcong.mpi.gov.vn:8081/GG/EP_MPV_GGQ999.jsp?bid_no="+gonggo_num+"&bid_turnno="+gonggo_cha+"&bid_type="+bid_type;
                 document.result.submit();
-                //window.open("http://muasamcong.mpi.gov.vn:8081/GG/EP_MPV_GGQ999.jsp?bid_no="+gonggo_num+"&bid_turnno="+gonggo_cha+"&bid_type="+bid_type);
+             
             }
 
             function goAppGongDongSu(gongo_no) {
@@ -64,26 +78,26 @@ idth=840, height=600, toolbar=no, scrollbars=yes, menubar=no, resizable=yes");
                 var y = (screen.height - 400) / 2 ;
                 var gubun = "0";
                 var docType = "ConsortiumAgreement";
-                window.open("http://muasamcong.mpi.gov.vn:8081/servlet/TC/EP_COV_TCQ302?gonggo_num="+gongo_no+"&gubun="+gubun+"&docType="+docType+"&lang=","goAppGongDongSu","left=50, top=50, width=840, height=600, toolbar=no, scrollbars=yes, menubar=no, resizable=yes");
+                window.open("http://muasamcong.mpi.gov.vn:8081/servlet/TC/EP_COV_TCQ302?gonggo_num="+gongo_no+"&gubun="+gubun+"&docType="+docType,"goAppGongDongSu","left=50, top=50, width=840, height=600, toolbar=no, scrollbars=yes, menubar=no, resizable=yes");
             }
    
         </script>
-        <title>Danh sách thông báo mời thầu</title>
+        <title>Danh sách kết quả đấu thầu trực ti�
+49e
+�p</title>
     </head>
 
     <body style=" height : 680px;">
 
         <div class="col-750 clearfix last">
-            <h1 class="pageTitle"><i class="icon-title"></i>Danh sách TBMT </h1>
+            <h1 class="pageTitle"><i class="icon-title"></i>Danh sách kết quả đấu thầu trực tiếp</h1>
             <!--begin-->
 
-            <form n
-49c
-ame="result">
+            <form name="result">
                 <table cellpadding="0" cellspacing="0" width="100%">
                     <tr>
-                        <td><span class="fontblue">[Màn hình tìm kiếm tra cứu hiện trạng thầu]</td>
-                        <td class=page><p align=right><img src="/img/page.gif" align="absmiddle"> [Số kết quả tìm kiếm : 105520 kết quả ]</td>
+                        <td><span class="fontblue"></td>
+                        <td class=page><p align=right><img src="/img/page.gif" align="absmiddle"> [Số kết quả tìm kiếm : 2751 kết quả ]</td>
                     </tr>
 
                 </table>
@@ -92,294 +106,219 @@ ame="result">
                         <tr height=4><td colspan="8" class="line"></td></tr>
                         <tr>
                             <td class="tdac" width="3%">STT</td>
-                            <td class="tdac" width="15%">Số TBMT</td>
-
+                            <td class="tdac" width="10%">Số TBMT</td>
                             <td class="tdac" width="15%">Bên mời thầu</td>
-                            <td class="tdac" width="27%">Tên gói thầu</td>
-                            
-                            	<td class="tdac" width="10%">Thời điểm đăng tải</td>
-                            
-                            	<td class="tdac" width="10%">T
-104
-hời điểm đóng thầu</td>
-                            		
-                            
+                            <td class="tdac" width="17%">Tên gói thầu</td>
+102
 
-                            <!-- <td class="tdac" width="10%">Liên danh</td> -->
-                            <!--  Them column ve Hinh thuc du thau 2011.06.23--
-5a8
->
-                            <td class="tdac" width="10%">Hình thức dự thầu</td>
-							
-                            <td class="tdac" width="10%">Dự thầu</td>
                             
+                            <td class="tdac" width="10%">Thời điểm đóng thầu</td>
+                            <td class="tdac" width="15%">Nhà thầu trúng thầu </td>
+                            <td class="tdac"
+5a8
+ width="10%">Giá trúng thầu </td>
+                            <td class="tdac" width="10%">Giá gói thầu </td>
                         </tr>
 
                         
+                                   
                         <tr>
-                            <td class="tdbc" >
-                                1
-                            </td>
-                            <td class="tdb" ><a href="#" onclick="goAspTuch('20150707062','00','1');"> 20150707062-00</a></td>
-                            <td class="tdb" >Phòng Nông nghiệp & PTNT - huyện Nghĩa Đàn</td>
-                            <td class="tdb" >Cung ứng con giống bê cái laisind cho các hộ nghèo trên địa bàn huyện Nghĩa Đàn thuộc dự án: Hỗ trợ PTSX chương trình 135 năm 2015</td>
-                            
-                            	<td class="tdb" >23/07/2015 08:50</td>
-                            
-                            	
-                            <td class="tdb" >12/08/2015 10:00</td>
-                            <!-- Add by thanhtv 2011.06.28-->
-                            
-                            <td class="tdb"> Trực tiếp</td>
-
-                            
-	                                    <!-- <td class="tdb" ></td> -->
-	                            			
-				                            		<td class="tdb" ><input disabled= 
+                            <td class="tdbc" >1</td>
+                            <td class="tdb" > 20150707267-00</td>
+                            <td class="tdb" >Công ty CP xi măng Vicem Bút Sơn</td>
+                            <td class="tdb" >Mua phụ tùng và thuê dịch vụ bảo dưỡng máy X-Ray 8680</td>                         
+                            <td class="tdb" ></td>
+                
+           
+                             <td class="tdb"><a href="#" onclick="goBidSuccFail('20150707267','00','1', true);">Công ty TNHH thương mại kỹ thuật Hoàn Kiếm</a></td>
+                             <td class="tdb">1.976.557.000 VNĐ</td>
+                         
+                          	<td class="tdb">1.990.000.000 VNĐ</td>
+                             
+                             
+			
+                           </tr>
+                        
+                                   
+                        <tr>
+                            <td class="tdcc" >2</td>
+                            <td class="tdc" > 20150707218-00</td>
+                            <td class="tdc" >Trung tâm Ứng phó sự cố tràn dầu khu vực miền  N
 5a8
-"false" type="button" class="commonbutton" name="btnOpinion" value="Tham dự"> </td>
-				                            
-				                        		</tr>
-			                        		
-			                        
+am (NASOS)</td>
+                            <td class="tdc" >Cung cấp và lắp đặt 2 bộ hòa đồng bộ máy phát điện của tàu NASOS II</td>                         
+                            <td class="tdc" ></td>
+                
+           
+                             <td class="tdc"><a href="#" onclick="goBidSuccFail('20150707218','00','1', true);">Công ty TNHH D&D Việt Nam</a></td>
+                             <td class="tdc">185.900.000 VNĐ</td>
+                         
+                          	<td class="tdc">191.400.000 VNĐ</td>
+                             
+                             
+			
+                           </tr>
+                        
+                                   
                         <tr>
-                            <td class="tdcc" >
-                                2
-                            </td>
-                            <td class="tdc" ><a href="#" onclick="goAspTuch('20150707061','00','1');"> 20150707061-00</a></td>
-                            <td class="tdc" >Phòng Nông nghiệp - PTNT huyện Quỳnh Nhai</td>
-                            <td class="tdc" >Hỗ trợ giống dê cái địa phương cho 173 hộ nghèo của 21 bản, xã Mường Giàng, huyện Quỳnh Nhai theo Nghị quyết 30a/2008/NQ-CP của Chính phủ, năm 2015</td>
-                            
-                            	<td class="tdc" >23/07/2015 08:50</td>
-                            
-                            	
-                            <td class="tdc" >06/08/2015 08:00</td>
-                            <!-- Add by thanhtv 2011.06.28-->
-                            
-                            <td class="tdc"> Trực tiếp</td>
-
-                            
-	                                    <!-- <td class="tdc" ></td> -->
-	                            			
-				                            		<td class="tdc" ><input disabled= "false" type="button" cla
+                            <td class="tdbc" >3</td>
+                            <td class="tdb" > 20150707191-00</td>
+                            <td class="tdb" >Công ty Điện lực Long An</td>
+                            <td class="tdb" >Gói thầu 06: Phụ kiện</td>                         
+                            <td class="tdb" ></td>
+                
+           
+                             <td class="tdb"><a href="#" onclick="goBidSuccFail('20150707191','00','1', true);">Cty TNHH MTV Việt Trường</a></td>
+                             <td class="tdb">2.322.943.170 VNĐ</td>
+                         
+                          	<td
 394
-ss="commonbutton" name="btnOpinion" value="Tham dự"> </td>
-				                            
-				                        		</tr>
-			                        		
-			                        
+ class="tdb">2.524.632.836 VNĐ</td>
+                             
+                             
+			
+                           </tr>
+                        
+                                   
                         <tr>
-                            <td class="tdbc" >
-                                3
-                            </td>
-                            <td class="tdb" ><a href="#" onclick="goAspTuch('20150707060','00','1');"> 20150707060-00</a></td>
-                            <td class="tdb" >Viện vật lý kỹ thuật/Viện KH-CN Quân sự</td>
-                            <td class="tdb" >Mua bộ vật tư linh kiện điện tử để phục vụ chế tạo thiết bị đo xa laser tần lặp tích hợp với khí tài quan sát</td>
-                            
-                            	<td class="tdb" >23/07/2015 08:50</td>
-                            
-            
+                            <td class="tdcc" >4</td>
+                            <td class="tdc" > 20150707189-00</td>
+                            <td class="tdc" >Công ty Điện lực Long An</td>
+                            <td class="tdc" >Gói thầu 08: Đà composite</td>                         
+                            <td class="tdc" ></td>
+                
+           
+                             <td class="tdc"><a href="#" onclick="goBidSuccFail('20150707189','00','1', true);">Cty CP KT TM E.E</a></td>
+                             <td class="tdc">92.620.000 VNĐ</td>
+                         
+                          	<td class="tdc">114.224.000 V
 20c
-                	
-                            <td class="tdb" >04/08/2015 08:30</td>
-                            <!-- Add by thanhtv 2011.06.28-->
-                            
-                            <td class="tdb"> Trực tiếp</td>
-
-                            
-	                                    <!-- <td class="tdb" ></td> -->
-	                            			
-				                            		<td class="tdb" ><input disabled= "false" type="button" class="commonbutton" name="btnOpinion" value="Tham d�
+NĐ</td>
+                             
+                             
+			
+                           </tr>
+                        
+                                   
+                        <tr>
+                            <td class="tdbc" >5</td>
+                            <td class="tdb" > 20150707186-00</td>
+                            <td class="tdb" >Công ty Điện lực Long An</td>
+                            <td class="tdb" >Gói thầu 07: Kẹp rẽ nhánh</td>                         
+     
 5a8
-��"> </td>
-				                            
-				                        		</tr>
-			                        		
-			                        
+                       <td class="tdb" ></td>
+                
+           
+                             <td class="tdb"><a href="#" onclick="goBidSuccFail('20150707186','00','1', true);">Cty CP KT TM E.E</a></td>
+                             <td class="tdb">464.750.000 VNĐ</td>
+                         
+                          	<td class="tdb">577.291.000 VNĐ</td>
+                             
+                             
+			
+                           </tr>
+                        
+                                   
                         <tr>
-                            <td class="tdcc" >
-                                4
-                            </td>
-                            <td class="tdc" ><a href="#" onclick="goAspTuch('20150707059','00','1');"> 20150707059-00</a></td>
-                            <td class="tdc" >Viện Công nghệ sinh học</td>
-                            <td class="tdc" >Vật tư hóa chất năm 2015</td>
-                            
-                            	<td class="tdc" >23/07/2015 08:50</td>
-                            
-                            	
-                            <td class="tdc" >07/08/2015 08:00</td>
-                            <!-- Add by thanhtv 2011.06.28-->
-                            
-                            <td class="tdc"> Trực tiếp</td>
-
-                            
-	                                    <!-- <td class="tdc" ></td> -->
-	                            			
-				                            		<td class="tdc" ><input disabled= "false" type="button" class="commonbutton" name="btnOpinion" value="Tham dự"> </td>
-				                            
-				                        		</tr>
-			                        		
-			                        
-                        <tr>
-                          
+                            <td class="tdcc" >6</td>
+                            <td class="tdc" > 20150707184-00</td>
+                            <td class="tdc" >Công ty Điện lực Long An</td>
+                            <td class="tdc" >Gói thầu 05: Hộp công tơ composite ngoài trời</td>                         
+                            <td class="tdc" ></td>
+                
+           
+                             <td class="tdc"><a href="#" onclick="goBidSuccFail('20150707184','00','1', true);">Cty TNHH SX TM DV Hoàng Việt</a></td>
+                             <td class="tdc">4.317.522.000 VNĐ</td>
+                         
+                          	<td class="tdc">4.996.695.000 VNĐ</td>
+                             
+                             
+			
+                           </tr>
+                        
+          
 5a8
-  <td class="tdbc" >
-                                5
-                            </td>
-                            <td class="tdb" ><a href="#" onclick="goAspTuch('20150707058','00','1');"> 20150707058-00</a></td>
-                            <td class="tdb" >Li�n danh Halla - Vinaconex E&C</td>
-                            <td class="tdb" >Cung cấp bảo hiểm công trình cho Gói thầu xây lắp A1 (Km0+600-Km7+900)</td>
-                            
-                            	<td class="tdb" >23/07/2015 08:50</td>
-                            
-                            	
-                            <td class="tdb" >03/08/2015 14:00</td>
-                            <!-- Add by thanhtv 2011.06.28-->
-                            
-                            <td class="tdb"> Trực tiếp</td>
-
-                            
-	                                    <!-- <td class="tdb" ></td> -->
-	                            			
-				                            		<td class="tdb" ><input disabled= "false" type="button" class="commonbutton" name="btnOpinion" value="Tham dự"> </td>
-				                            
-				                        		</tr>
-			                        		
-			                        
+                         
                         <tr>
-                            <td class="tdcc" >
-                                6
-                            </td>
-                            <td class="tdc" ><a hre
-28c
-f="#" onclick="goAspTuch('20150707057','00','1');"> 20150707057-00</a></td>
-                            <td class="tdc" >Sở Giáo dục và Đào tạo Hà Nội</td>
-                            <td class="tdc" >Gói thầu số 1: Tổ chức đào tạo nâng cao năng lực ngôn ngữ cho giáo viên tiếng Anh các cấp học toàn thành phố (quy mô 6 lớp)</td>
-                            
-                            	<td class="tdc" >23/07/2015 08:50</td>
-                            
-                            	
-                            <td class="tdc" >04/08/2015 09:30</td>
-                            <!-- Add by th
-2
-an
+                            <td class="tdbc" >7</td>
+                            <td class="tdb" > 20150707183-00</td>
+                            <td class="tdb" >Công ty Điện lực Long An</td>
+                            <td class="tdb" >Gói thầu 04: Sứ cách điện hạ thế</td>                         
+                            <td class="tdb" ></td>
+                
+           
+                             <td class="tdb"><a href="#" onclick="goBidSuccFail('20150707183','00','1', true);">Cty TNHH Cao Linh</a></td>
+                             <td class="tdb">360.800.000 VNĐ</td>
+                         
+                          	<td class="tdb">420.596.000 VNĐ</td>
+                             
+                             
+			
+                           </tr>
+                        
+                                   
+                        <tr>
+                            <td class="tdcc" >8</td>
+                            <td class="tdc" > 20150706891-00</td>
+                            <td class="tdc" >Công ty Cổ phần Công nghệ Mobifone Toàn Cầu</td>
+                            <td class="tdc" >Mua sắm thiết bị</td>                         
+                            <td class="tdc" ></td>
+                
+           
+                             <td class="tdc"><a href="#" onclick="goBidSuccFa
+28a
+il('20150706891','00','1', true);">Công ty TNHH Điện tử Viễn thông Đại Dương</a></td>
+                             <td class="tdc">264.348.565 VNĐ</td>
+                         
+                          	<td class="tdc">275.363.088 VNĐ</td>
+                             
+                             
+			
+                           </tr>
+                        
+                                   
+                        <tr>
+                            <td class="tdbc" >9</td>
+                            <td class="tdb" > 20150706858-00</td>
+                            <td class="tdb" >Trường Cao đẳng nghề
+17
+ Công nghệ Hà Tĩnh
 5a2
-htv 2011.06.28-->
-                            
-                            <td class="tdc"> Trực tiếp</td>
-
-                            
-	                                    <!-- <td class="tdc" ></td> -->
-	                            			
-				                            		<td class="tdc" ><input disabled= "false" type="button" class="commonbutton" name="btnOpinion" value="Tham dự"> </td>
-				                            
-				                        		</tr>
-			                        		
-			                        
+</td>
+                            <td class="tdb" >04-TB: Mua sắm, lắp đặt thiết bị dùng chung phục vụ công tác đào tạo nghề (Máy vi tính, âm thanh loa máy)</td>                         
+                            <td class="tdb" ></td>
+                
+           
+                             <td class="tdb"><a href="#" onclick="goBidSuccFail('20150706858','00','1', true);">Công ty cổ phần Vạn Xuân</a></td>
+                             <td class="tdb">318.900.000 VNĐ</td>
+                         
+                          	<td class="tdb">319.500.000 VNĐ</td>
+                             
+                             
+			
+                           </tr>
+                        
+                                   
                         <tr>
-                            <td class="tdbc" >
-                                7
-                            </td>
-                            <td class="tdb" ><a href="#" onclick="goAspTuch('20150707056','00','1');"> 20150707056-00</a></td>
-                            <td class="tdb" >Chi cục Kiểm lâm tỉnh Gia Lai</td>
-                            <td class="tdb" >Mua sắm trang phục Kiểm lâm tỉnh Gia Lai</td>
-                            
-                            	<td class="tdb" >23/07/2015 08:50</td>
-                            
-                            	
-                            <td class="tdb" >04/08/2015 08:30</td>
-                            <!-- Add by thanhtv 2011.06.28-->
-                            
-                            <td class="tdb"> Trực tiếp</td>
-
-                            
-	                      
-5a8
-              <!-- <td class="tdb" ></td> -->
-	                            			
-				                            		<td class="tdb" ><input disabled= "false" type="button" class="commonbutton" name="btnOpinion" value="Tham dự"> </td>
-				                            
-				                        		</tr>
-			                        		
-			                        
-                        <tr>
-                            <td class="tdcc" >
-                                8
-                            </td>
-                            <td class="tdc" ><a href="#" onclick="goAspTuch('20150707055','00','1');"> 20150707055-00</a></td>
-                            <td class="tdc" >Viện Hóa học</td>
-                            <td class="tdc" >Mua sắm vật tư hóa chất năm 2015 - chào hàng cạnh tranh rút gọn</td>
-                            
-                            	<td class="tdc" >23/07/2015 08:50</td>
-                            
-                            	
-                            <td class="tdc" >27/07/2015 16:30</td>
-                            <!-- Add by thanhtv 2011.06.28-->
-                            
-                            <td class="tdc"> Trực tiếp</td>
-
-                            
-	                                    <!-- <td class="tdc" ></td> -->
-	                            			
-				                            		<td class="tdc" ><input disabled= "false" type="b
-49e
-utton" class="commonbutton" name="btnOpinion" value="Tham dự"> </td>
-				                            
-				                        		</tr>
-			                        		
-			                        
-                        <tr>
-                            <td class="tdbc" >
-                                9
-                            </td>
-                            <td class="tdb" ><a href="#" onclick="goAspTuch('20150707054','00','1');"> 20150707054-00</a></td>
-                            <td class="tdb" >Sở Giáo dục và Đào tạo Hà Nội</td>
-                            <td class="tdb" >Gói thầu số 5 : Tổ chức thi cấp chứng chỉ B2 và C1 cho giáo viên sau khi đào tạo, bồi dưỡng</td>
-                            
-                            	<td class="tdb" >23/07/2015 08:50</td>
-                            
-                            	
-                            <td class="tdb" >04/08/2015 08:00</td>
-                            <!-- Add by thanhtv 2011.06.28-->
-                            
-                            <td class="tdb"> Trực tiếp</td>
-
-                            
-	                    
-5a2
-                <!-- <td class="tdb" ></td> -->
-	                            			
-				                            		<td class="tdb" ><input disabled= "false" type="button" class="commonbutton" name="btnOpinion" value="Tham dự"> </td>
-				                            
-				                        		</tr>
-			                        		
-			                        
-                        <tr>
-                            <td class="tdcc" >
-                                10
-                            </td>
-                            <td class="tdc" ><a href="#" onclick="goAspTuch('20150707053','00','1');"> 20150707053-00</a></td>
-                            <td class="tdc" >Sở Giáo dục và Đào tạo Hà Nội</td>
-                            <td class="tdc" >Gói thầu số 4 : Tổ chức bồi dưỡng phương pháp giảng dạy cho giáo viên tiếng anh các cấp thời lượng 80 tiết và 180 tiết do giáo viên trong nước giảng dạy (quy mô 20 lớp)</td>
-                            
-                            	<td class="tdc" >23/07/2015 08:50</td>
-                            
-                            	
-                            <td class="tdc" >04/08/2015 09:00</td>
-                            <!-- Add by thanhtv 2011.06.28-->
-                            
-                            <td class="tdc"> Trực tiếp</td>
-
-                            
-	             
+                            <td class="tdcc" >10</td>
+                            <td class="tdc" > 20150706857-00</td>
+                            <td class="tdc" >Trường Cao đẳng nghề Công nghệ Hà Tĩnh</td>
+                            <td class="tdc" >03-TB: Mua sắm, lắp đặt thiết bị dạy nghề Kỹ thuật Chế biến món ăn - Mô hình thiết bị dạy nghề Vận hành máy thi công Nền - thiết bị dạy nghề Hàn</td>                         
+                            <td class="tdc" ></td>
+                
+           
+                             <td class="tdc"><a href
 a44
-                       <!-- <td class="tdc" ></td> -->
-	                            			
-				                            		<td class="tdc" ><input disabled= "false" type="button" class="commonbutton" name="btnOpinion" value="Tham dự"> </td>
-				                            
-				                        		</tr>
-			                        		
-			                        
+="#" onclick="goBidSuccFail('20150706857','00','1', true);">Công ty TNHH Sản xuất và Thương Mại Văn Lang</a></td>
+                             <td class="tdc">813.270.000 VNĐ</td>
+                         
+                          	<td class="tdc">814.410.000 VNĐ</td>
+                             
+                             
+			
+                           </tr>
+                        
                         <tr height="1"><td colspan="8" class="line"/></tr>
                     </table>
                     <table width="100%" border="0" cellspacing="1" cellpadding="2"	class="tr">
@@ -391,11 +330,11 @@ a44
                         </tr>
                     </table>
                 </form>
-                <table id='nextBackTable' width=100% border=0 cellpadding=2 cellspacing=2 class=tr><tr><td align=center background=/img/dotlines.gif height=1></td></tr><tr><td align=center class=redc><img align=absmiddle src=/img/bu_backarwn.gif border=0 alt='10Trước'>[1]<a href='/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N&page_no=2'>[2]</a><a href='/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N&page_no=3'>[3]</a><a href='/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N&page_no=4'>[4]</a><a href='/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N&page_no=5'>[5]</a><a href='/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N&page_no=6'>[6]</a><a href='/GG/EP_SSJ_GGQ701.
+                <table id='nextBackTable' width=100% border=0 cellpadding=2 cellspacing=2 class=tr><tr><td align=center background=/img/dotlines.gif height=1></td></tr><tr><td align=center class=redc><img align=absmiddle src=/img/bu_backarwn.gif border=0 alt='10Trước'>[1]<a href='/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1&page_no=2'>[2]</a><a href='/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1&page_no=3'>[3]</a><a href='/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1&page_no=4'>[4]</a><a href='/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1&page_no=5'>[5]</a><a href='/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&
 5b4
-jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N&page_no=7'>[7]</a><a href='/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N&page_no=8'>[8]</a><a href='/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N&page_no=9'>[9]</a><a href='/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N&page_no=10'>[10]</a><a href='/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/07/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N&page_no=11'><img align=absmiddle src=/img/bu_nextarw.gif border=0 alt='10 Sau'></a><a href='/GG/EP_SSJ_GGQ701.jsp?gubun=1&fromDate=10/06/2005&toDate=23/0
-1e3
-7/2015&pageSize=10&pageNo=4&pqCls=Y&bidMethod=&viewType=0&instituName=&instituCode=&isInstitu=&bidNM=&typeFind=1&fromOpenDate=01/01/2010&toOpenDate=31/12/2050&refNumber=&firstCall=N&page_no=11'></a></td></tr><tr><td align=center background=/img/dotlines.gif height=1></td></tr></table>
+Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1&page_no=6'>[6]</a><a href='/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1&page_no=7'>[7]</a><a href='/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1&page_no=8'>[8]</a><a href='/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1&page_no=9'>[9]</a><a href='/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1&page_no=10'>[10]</a><a href='/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firs
+2a3
+tCall=N&pageNo=5&gubun=1&page_no=11'><img align=absmiddle src=/img/bu_nextarw.gif border=0 alt='10 Sau'></a><a href='/GG/EP_SSJ_GGQ803.jsp?pqCls=Y&bidMethod=00&viewType=0&instituName=&instituCode=&isInstitu=0&bidNM=&fromOpenDate=10/06/2005&toOpenDate=24/07/2015&fromDate=01/01/2010&toDate=31/12/2050&refNumber=&Bid_succ_offline_yn=N&pageSize=10&firstCall=N&pageNo=5&gubun=1&page_no=11'></a></td></tr><tr><td align=center background=/img/dotlines.gif height=1></td></tr></table>
 
             </form>
         </div>

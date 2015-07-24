@@ -39,7 +39,7 @@ $listCategory = [
 
 $listPage = [
     ['code' => 'THONG_BAO_MOI_THAU', 'name' => 'Thông báo mời thầu', 'url' => 'tbmt.php', 'url_detail' => 'tbmt_detail.php'],
-    ['code' => 'THONG_BAO_MOI_THAU_QUOC_TE', 'name' => 'Thông báo mời thầu quốc tế', 'url' => 'tbmtqt.php', 'url_detail' => ''],
+    ['code' => 'THONG_BAO_MOI_THAU_QUOC_TE', 'name' => 'Thông báo mời thầu quốc tế', 'url' => 'tbmtqt.php', 'url_detail' => 'tbmtqt_detail.php'],
     ['code' => 'KET_QUA_DAU_THAU_TRUC_TIEP', 'name' => 'Kết quả đấu thầu trực tiếp', 'url' => 'kqdt_tt.php', 'url_detail' => ''],
     //['code' => 'KET_QUA_DAU_THAU_DIEN_TU', 'name' => 'Kết quả đấu thầu điện tử', 'url' => 'kqdt_dt.php'],
 ];
@@ -104,7 +104,7 @@ $tbCategory = [
                         <a class="button" href="/<?=$p['url']?>?c=<?=$c['code']?>&p=new" target="_blank">Get New</a>
                     </td>
                     <td>
-                        <a class="button" href="/<?=$p['url_detail']?>?c=<?=$c['code']?>&p=new" target="_blank">Get Detail</a>
+                        <a class="button" href="/<?=$p['url_detail']?>?c=<?=$c['code']?>" target="_blank">Get Detail</a>
                     </td>
                 </tr>
                 <?php

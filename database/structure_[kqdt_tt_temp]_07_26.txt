@@ -1,0 +1,3 @@
+ALTER TABLE `kqdt_tt_temp`
+ADD COLUMN `category`  int(11) NULL AFTER `kqdt_tt_id`;
+

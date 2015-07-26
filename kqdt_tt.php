@@ -62,25 +62,18 @@ if ($row = mysql_fetch_assoc($db->result)) {
                         $cTd = 0;
                         foreach ($domTds as $td) {
                             if ($cTd == 1) {
-                                $rec['so_tbmt'] = '"' . addslashes(trim($td->plaintext)) . '"';
-                            }
-                            if ($cTd == 2) {
-                                $rec['ben_mt'] = '"' . addslashes(trim($td->plaintext)) . '"';
-                            }
-                            if ($cTd == 3) {
-                                $rec['ten_goi_thau'] = '"' . addslashes(trim($td->plaintext)) . '"';
-                            }
-                            if ($cTd == 4) {
-                                $rec['thoi_diem_dong_thau'] = '"' . addslashes(trim($td->plaintext)) . '"';
-                            }
-                            if ($cTd == 5) {
-                                $rec['nt_trung_thau'] = '"' . addslashes(trim($td->plaintext)) . '"';
-                            }
-                            if ($cTd == 6) {
-                                $rec['gia_trung_thau'] = '"' . addslashes(trim($td->plaintext)) . '"';
-                            }
-                            if ($cTd == 7) {
-                                $rec['gia_goi_thau'] = '"' . addslashes(trim($td->plaintext)) . '"';
+                                $soTbmt = trim($td->plaintext);
+                                $t = explode('-', $soTbmt);
+                                $bid = [];
+                                $bid[] = 'bidNo=' . $t[0];
+                                $bid[] = 'bidTurnno=' . $t[1];
+                                $bid[] = 'bid_type=' . TBMT_BID_TYPE;
+                                $url = TBMT_DETAIL_URL . '?' . implode('&', $bid);
+                                if ($url != '') {
+                                    $rec['url'] = '"' . addslashes(trim($url)) . '"';
+                                }
+                                $rec['so_tbmt'] = '"' . addslashes(trim($soTbmt)) . '"';
+                                $rec['category'] = constant($_GET['c']);
                             }
                             $cTd++;
                         }
@@ -88,8 +81,14 @@ if ($row = mysql_fetch_assoc($db->result)) {
                         $rec['category'] = $route->getCategory();
                     }
 
-                    if (isset($rec['so_tbmt']) && $rec['so_tbmt'] != null) {
-                        $data[$cTr] = $rec;
+                    if ($soTbmt && $soTbmt != null && isset($rec['url'])) {
+                        if (isset($_GET['p']) && $_GET['p'] == 'new') {
+                            if (!checkDuplicate($soTbmt)) {
+                                $data[$cTr] = $rec;
+                            }
+                        } else {
+                            $data[$cTr] = $rec;
+                        }
                     }
                     $cTr++;
                 }
@@ -126,3 +125,14 @@ print $message->toHtml();
 if (isset($data)) dump($data);
 unset($html);
 unset($db);
+
+function checkDuplicate($key)
+{
+    $sql = "SELECT count(id) AS count FROM kqdt_tt_temp WHERE so_tbmt = '". $key ."'";
+    $db = new db_count($sql);
+    if ($db->total > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}

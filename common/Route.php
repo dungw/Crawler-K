@@ -12,6 +12,7 @@ class Route
     const ACTIVE = 1;
     const INACTIVE = 0;
     const MODE_NEW = 'new';
+    const MODE_NEW_PAGE_SIZE = 100;
 
     private $category = null;
     private $page = null;
@@ -28,6 +29,7 @@ class Route
     {
         if ($mode == self::MODE_NEW) {
             $this->mode = $mode;
+            $this->setPageSize(self::MODE_NEW_PAGE_SIZE);
         }
     }
 

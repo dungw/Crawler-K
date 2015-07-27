@@ -98,6 +98,11 @@ function remove_spaces($str)
     return preg_replace('/\s+/', ' ', $str);
 }
 
+function addStrData($data)
+{
+    return ('"' . addslashes(remove_spaces(trim($data))) . '"');
+}
+
 function get_numerics($str)
 {
     preg_match_all('/\d+/', $str, $matches);

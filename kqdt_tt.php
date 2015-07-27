@@ -66,14 +66,13 @@ if ($row = mysql_fetch_assoc($db->result)) {
                                 $t = explode('-', $soTbmt);
                                 $bid = [];
                                 $bid[] = 'bidNo=' . $t[0];
-                                $bid[] = 'bidTurnno=' . $t[1];
-                                $bid[] = 'bid_type=' . TBMT_BID_TYPE;
-                                $url = TBMT_DETAIL_URL . '?' . implode('&', $bid);
+                                $bid[] = 'bidTurnNo=' . $t[1];
+                                $bid[] = 'bidType=' . KQDT_TT_BID_TYPE;
+                                $url = KQDT_TT_DETAIL_URL . '?' . implode('&', $bid);
                                 if ($url != '') {
                                     $rec['url'] = '"' . addslashes(trim($url)) . '"';
                                 }
                                 $rec['so_tbmt'] = '"' . addslashes(trim($soTbmt)) . '"';
-                                $rec['category'] = constant($_GET['c']);
                             }
                             $cTd++;
                         }

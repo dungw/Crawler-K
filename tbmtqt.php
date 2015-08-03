@@ -133,6 +133,8 @@ if ($row = mysql_fetch_assoc($db->result)) {
         $up['done'] = 1;
         updateDB('route', 'id', $row['id'], $up);
     }
+} else {
+    $message->insert('Đã lấy hết dữ liệu');
 }
 
 print $message->toHtml();

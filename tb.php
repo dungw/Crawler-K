@@ -28,7 +28,7 @@ if ($row = mysql_fetch_assoc($db->result)) {
         $url = $row['url'] . '&page_no=' . ($row['page'] + 1);
 
         //add url to message
-        $message->insert($url);
+        $message->insertUrl($url);
 
         //get html
         $html = getHTML($url);

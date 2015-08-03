@@ -5,7 +5,7 @@ if (isset($_POST['do']) && $_POST['do'] == 'reset' && ENVIRONMENT == 'develop') 
     $sql = 'SELECT * FROM route';
     $db = new db_query($sql);
     while ($row = mysql_fetch_assoc($db->result)) {
-        $query = "UPDATE route SET page_no = 0, page_total = 0, done = 0 WHERE id = ". $row['id'];
+        $query = "UPDATE route SET page_no = 0, page_total = 0, done = 0 WHERE id = " . $row['id'];
         $db1 = new db_query($query);
         unset($db1);
     }
@@ -14,7 +14,7 @@ if (isset($_POST['do']) && $_POST['do'] == 'reset' && ENVIRONMENT == 'develop') 
     $sql = 'SELECT * FROM source';
     $db = new db_query($sql);
     while ($row = mysql_fetch_assoc($db->result)) {
-        $query = "UPDATE source SET page = 0, total_page = 0, done = 0 WHERE id = ". $row['id'];
+        $query = "UPDATE source SET page = 0, total_page = 0, done = 0 WHERE id = " . $row['id'];
         $db1 = new db_query($query);
         unset($db1);
     }
@@ -23,7 +23,7 @@ if (isset($_POST['do']) && $_POST['do'] == 'reset' && ENVIRONMENT == 'develop') 
     //truncate all table
     $arTable = ['kqdt_tt', 'kqdt_tt_temp', 'kqmt_dt', 'tb_bmt', 'tb_khdt', 'tb_temp', 'tbmt', 'tbmt_qt', 'tbmt_temp'];
     foreach ($arTable as $tbl) {
-        $sql = 'TRUNCATE TABLE '. $tbl;
+        $sql = 'TRUNCATE TABLE ' . $tbl;
         $db = new db_query($sql);
         unset($db);
     }
@@ -45,14 +45,10 @@ $listPage = [
 ];
 
 $tbPage = [
-    ['url' => 'tb.php', 'name' => 'Danh sách'],
-    ['url' => 'tb_detail.php', 'name' => 'Chi tiết'],
+    ['name' => 'Thông báo - Bộ KHĐT', 'url' => 'tb.php', 'url_detail' => 'tb_detail.php', 'code' => 'TB_KHDT'],
+    ['name' => 'Thông báo của bên mời thầu', 'url' => 'tb.php', 'url_detail' => 'tb_detail.php', 'code' => 'TB_BEN_MT'],
 ];
 
-$tbCategory = [
-    ['code' => 'TB_KHDT', 'name' => 'Thông báo - Bộ KHĐT'],
-    ['code' => 'TB_BEN_MT', 'name' => 'Thông báo của bên mời thầu'],
-];
 ?>
 <!DOCTYPE html>
 <html>
@@ -74,7 +70,7 @@ $tbCategory = [
                     </form>
                 </td>
             </tr>
-            <?php
+        <?php
         }
         ?>
         <tr>
@@ -98,41 +94,38 @@ $tbCategory = [
                         <span><?= $p['name'] ?></span>
                     </td>
                     <td>
-                        <a class="button" href="/<?=$p['url']?>?c=<?=$c['code']?>" target="_blank">Get All</a>
+                        <a class="button" href="/<?= $p['url'] ?>?c=<?= $c['code'] ?>" target="_blank">Get All</a>
                     </td>
                     <td>
-                        <a class="button" href="/<?=$p['url']?>?c=<?=$c['code']?>&p=new" target="_blank">Get New</a>
+                        <a class="button" href="/<?= $p['url_detail'] ?>?c=<?= $c['code'] ?>" target="_blank">Get
+                            Detail</a>
                     </td>
                     <td>
-                        <a class="button" href="/<?=$p['url_detail']?>?c=<?=$c['code']?>" target="_blank">Get Detail</a>
-                    </td>
-                </tr>
-                <?php
-            }
-        }
-
-        //individual url
-        foreach ($tbCategory as $c) {
-            $cc = 0;
-            foreach ($tbPage as $p) {
-                $cc++;
-                ?>
-                <tr>
-                    <td>
-                        <span><?= ($cc == 1) ? $c['name'] : '' ?></span>
-                    </td>
-                    <td>
-                        <span><?= $p['name'] ?></span>
-                    </td>
-                    <td>
-                        <a class="button" href="/<?=$p['url']?>?c=<?=$c['code']?>" target="_blank">Get All</a>
-                    </td>
-                    <td>
-                        <a class="button" href="/<?=$p['url']?>?c=<?=$c['code']?>" target="_blank">Get New</a>
+                        <a class="button" href="/<?= $p['url'] ?>?c=<?= $c['code'] ?>&p=new" target="_blank">Get New</a>
                     </td>
                 </tr>
             <?php
             }
+        }
+
+        //individual url
+        foreach ($tbPage as $tp) {
+            ?>
+            <tr>
+                <td colspan="2">
+                    <span><?= $tp['name'] ?></span>
+                </td>
+                <td>
+                    <a class="button" href="/<?= $tp['url'] ?>?c=<?= $tp['code'] ?>" target="_blank">Get All</a>
+                </td>
+                <td>
+                    <a class="button" href="/<?= $tp['url_detail'] ?>?c=<?= $tp['code'] ?>" target="_blank">Get Detail</a>
+                </td>
+                <td>
+                    <a class="button" href="/<?= $tp['url'] ?>?c=<?= $tp['code'] ?>&p=new" target="_blank">Get New</a>
+                </td>
+            </tr>
+        <?php
         }
         ?>
     </table>
@@ -145,16 +138,20 @@ $tbCategory = [
         font-family: Arial, Helvetica, sans-serif;
         font-size: 13px !important;
     }
+
     .main {
         border-collapse: collapse;
         border-color: gray;
     }
+
     .main {
         border-color: gray;
     }
+
     .main td, .main th {
         padding: 5px 6px;
     }
+
     .main tr:hover {
         background: #E9FCF8;
     }

@@ -14,8 +14,8 @@ require_once 'common/Route.php';
 require_once 'common/Message.php';
 require_once 'common/Ini_Parser.php';
 
-define('ENVIRONMENT', 'develop');
-//define('ENVIRONMENT', 'production');
+//define('ENVIRONMENT', 'develop');
+define('ENVIRONMENT', 'production');
 
 
 

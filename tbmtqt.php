@@ -79,6 +79,8 @@ if ($row = mysql_fetch_assoc($db->result)) {
                                 $rec['so_tbmt'] = '"' . addslashes(trim($soTbmt)) . '"';
                                 $rec['type'] = TBMT_TYPE_QT;
                                 $rec['category'] = constant($_GET['c']);
+                            } elseif ($cTd == 4) {
+                                $rec['thoi_diem_dang_tai'] = convertDateToTime(trim($td->plaintext), 'd/m/Y H:i');
                             }
                             $cTd++;
                         }

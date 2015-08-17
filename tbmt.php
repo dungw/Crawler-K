@@ -63,6 +63,11 @@ if ($row = mysql_fetch_assoc($db->result)) {
                         foreach ($domTds as $td) {
                             if ($cTd == 1) {
                                 $soTbmt = trim($td->plaintext);
+
+                                if (strpos('F'.$soTbmt, '  cbe  ')) {
+                                    $soTbmt = str_replace('  cbe  ', '', $soTbmt);
+                                }
+
                                 $t = explode('-', $soTbmt);
                                 $bid = [];
                                 $bid[] = 'bid_no=' . $t[0];
@@ -70,11 +75,17 @@ if ($row = mysql_fetch_assoc($db->result)) {
                                 $bid[] = 'bid_type=' . TBMT_BID_TYPE;
                                 $url = TBMT_DETAIL_URL . '?' . implode('&', $bid);
                                 if ($url != '') {
-                                    $rec['url'] = '"' . addslashes(trim($url)) . '"';
+                                    $rec['url'] = addStrData($url);
                                 }
-                                $rec['so_tbmt'] = '"' . addslashes(trim($soTbmt)) . '"';
+                                $rec['so_tbmt'] = addStrData($soTbmt);
                                 $rec['type'] = TBMT_TYPE;
                                 $rec['category'] = constant($_GET['c']);
+                            } elseif ($cTd == 4) {
+                                $rec['thoi_diem_dang_tai'] = convertDateToTime(trim($td->plaintext), 'd/m/Y H:i');
+                            } elseif ($cTd == 5) {
+                                $rec['thoi_diem_dong_thau'] = convertDateToTime(trim($td->plaintext), 'd/m/Y H:i');
+                            } elseif ($cTd == 6) {
+                                $rec['hinh_thuc_du_thau'] = addStrData($td->plaintext);
                             }
                             $cTd++;
                         }

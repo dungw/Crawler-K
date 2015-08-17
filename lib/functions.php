@@ -3,6 +3,19 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/common/Ini_Parser.php';
 
 use common\Ini_Parser;
 
+function convertDateToTime($date, $inFormat = 'd/m/Y - H:i')
+{
+    if (trim($date) !== '') {
+        $dateObj = DateTime::createFromFormat($inFormat, $date);
+        if (!is_object($dateObj)) {
+            return 0;
+        }
+        $time = strtotime($dateObj->format('m/d/Y H:i'));
+        return $time;
+    }
+    return 0;
+}
+
 function Setting_Env($route = null)
 {
     if (ENVIRONMENT == 'production') {
@@ -15,6 +28,7 @@ function Setting_Env($route = null)
         $loop = LOOP_DEVELOP;
     }
     print '<meta http-equiv="refresh" content="'. $loop .'" />';
+//    error_reporting(0);
 }
 
 function analyzeTableDom($html, $columns, $iniFile)
@@ -32,6 +46,7 @@ function analyzeTableDom($html, $columns, $iniFile)
     }
 
     $data = [];
+
     $trs = $html->find('tr');
 
     /**** EXECUTE */
@@ -42,7 +57,6 @@ function analyzeTableDom($html, $columns, $iniFile)
             if (isset($rule['config']['range'])) {
                 $cTr = 0;
                 foreach ($trs as $key => $tr) {
-
                     if ($cTr < $rule['config']['range'][0] || $cTr > $rule['config']['range'][1] || (isset($rule['config']['unset']) && in_array($cTr, $rule['config']['unset']))) {
                         unset($trs[$cTr]);
                     }
@@ -68,6 +82,8 @@ function analyzeTableDom($html, $columns, $iniFile)
                     $keys = array_keys($dataRule);
                     foreach ($keys as $k) {
 
+                        //get value
+                        $value = '';
                         if ($dataRule[$k]['tr_number'] == $countTr && $dataRule[$k]['td_number'] == $countTd) {
                             if ($dataRule[$k]['dom'] == '' && is_numeric($dataRule[$k]['dom_number'])) {
                                 $value = $td->$dataRule[$k]['dom_property'];
@@ -80,7 +96,6 @@ function analyzeTableDom($html, $columns, $iniFile)
                             } elseif ($dataRule[$k]['type'] == 'int') {
                                 $data[$k] = intval(trim($value));
                             }
-
                         }
                     }
 
@@ -100,7 +115,15 @@ function remove_spaces($str)
 
 function addStrData($data)
 {
+    $data = str_replace('5a8', '', $data);
     return ('"' . addslashes(remove_spaces(trim($data))) . '"');
+}
+
+function addDateData($data)
+{
+    $data = str_replace('  5a8  5', '5', $data);
+    $data = str_replace('5a8', '', $data);
+    return convertDateToTime(remove_spaces(trim($data)));
 }
 
 function get_numerics($str)
@@ -119,7 +142,6 @@ function redirect($url)
 // Function generate picture name from product name
 function genPictureName($proName, $ext)
 {
-    $piName = '';
     $piName = removeAccent(trim($proName));
     $piName = strtolower($piName);
     $piName = ucfirst($piName);
@@ -229,11 +251,11 @@ function getExtention($filename)
 
 function execKeyword($keyword)
 {
-    $arrEnter = array();
     $temp = str_replace(' ', '', $keyword);
     $temp = str_replace('	', '', $temp);
 
     $tmp = explode(chr(13), $temp);
+    $arrResult = [];
     if (!empty($tmp)) {
         foreach ($tmp as $k => $v) {
             $v = trim($v);
@@ -315,6 +337,7 @@ function dirView($directory, $recursive = false, $classify = false)
 // Generate character a-z 0-9 | $n = number character need
 function genChar($n)
 {
+
     $reValue = '';
     for ($i = 1; $i <= $n; $i++) {
         $reValue .= chr(rand(97, 122));
